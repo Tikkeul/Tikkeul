@@ -5,128 +5,247 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다음열매게시판목록</title>
-    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin.css">
+    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin/admin.css">
+    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin/admin-request.css">
 </head>
+
+
 <body>
-    <div class="sidebar">
-        <div class="logo-container">
-            <div class="logo">로고</div>
-        </div>
-        <nav class="nav">
-            <ul class="side-menu">
-                <li class="site-shortcut">
-                    <a href="">사이트 바로가기</a>
-                </li>    
-                <div class="management-title">사이트 관리</div>
-                <li class="management-menu-list">
-                    <a href="">회원목록</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">프로그램목록</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">상품관리</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">신고내역</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">다음열매게시판목록</a>
-                </li>
-            </ul>
-        </nav>
+<div class="sidebar">
+    <div class="logo-container">
+        <div class="logo">로고</div>
     </div>
-    <section class="management-main-content">
-        <div class="management-top">
-            <div class="page-name">다음열매게시판목록</div>
-        </div>
-        <div class="management-content-container">
-            <div class="management-search-container">
-                <div class="search-inner">
-                    <form action="">
-                        <div class="search-field">
-                            <input type="text" placeholder="검색어를 입력하세요">
-                        </div>
-                        <button type="submit" class="management-search-button">
-                            <div>
-                                <img src="../../../static/image/search.png" alt="" class="management-search-img">
-                            </div>
-                        </button>
-                    </form>
-                </div>
+    <nav class="nav">
+        <ul class="side-menu">
+            <li class="site-shortcut">
+                <input type="button" class="side-menu-button" value="사이트 바로가기">
+            </li>
+            <div class="management-title">사이트 관리</div>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="메인페이지"
+                       onclick="location.href='admin-main.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="회원목록"
+                       onclick="location.href='admin-member.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="프로그램목록"
+                       onclick="location.href='admin-program.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="상품관리"
+                       onclick="location.href='admin-product.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="신고내역"
+                       onclick="location.href='admin-report.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="다음열매게시판목록"
+                       onclick="location.href='admin-request.html'">
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="management-top">
+    <div class="page-name">다음열매게시판목록</div>
+</div>
+
+<section class="management-main-content">
+
+    <div class="request-main">
+
+        <div class="request-box">
+
+            <div class="search-container">
+                <select>
+                    <option value="content">내용</option>
+                    <option value="name">제목</option>
+                    <option value="id">회원 ID</option>
+                </select> <input type="text" name="search" id="search"/>
+                <input
+                        type="image" class="search"
+                        src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"/>
+                <input type="button" class="delete" name="delete" value="삭제"/>
+
             </div>
-            <div class="management-list">
-                <div class="management-table-body">
-                    <div class="management-table">
-                        <div class="management-table-data-wrapper">
-                            <table class="management-table">
-                                <thead>
-                                    <tr>
-                                        <th class="management-table-data-header"></th>
-                                        <th class="management-table-data-header"></th>
-                                        <th class="management-table-data-header"></th>
-                                        <th class="management-table-data-header"></th>
-                                        <th class="management-table-data-header"></th>
-                                        <th class="management-table-data-header"></th>
-                                    </tr>
-                                </thead>
-                                <tbody> 
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                        <td class="management-table-data"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="table-content">
+                <table>
+                    <tr>
+                        <th><input type="checkbox" name="delete-report" class="all"/></th>
+                        <th>게시글 번호</th>
+                        <th>이름</th>
+                        <th>회원 ID</th>
+                        <th>제목</th>
+                        <th>내용</th>
+                        <th>작성 날짜</th>
+                    </tr>
+                    <tr onclick="location.href='admin-request-detail.html'">
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td>1</td>
+                        <td>오명근</td>
+                        <td>12</td>
+                        <td>이거 추가해주세요</td>
+                        <td></td>
+                        <td>2023-05-12</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="delete-report" class="term"/></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+                <p class="pages">
+                    1 2 3 4 5
+                </p>
+
             </div>
         </div>
-    </div>
-    </section>
+
+</section>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    const $all = $(".all");
+    const $checkboxes = $(".term");
+    $all.on("click", function(){
+        $checkboxes.prop("checked", $(this).is(":checked"));
+    });
+
+
+    $checkboxes.on("click", function(){
+        $all.prop("checked", $checkboxes.filter(":checked").length == 10);
+    });
+
+
+    $checkboxes.each(function(i, checkbox){
+        if(!($(checkbox).is(":checked"))){
+            $all.prop("checked", false);
+        }
+    });
+</script>
 </html>

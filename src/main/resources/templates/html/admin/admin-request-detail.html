@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>요청 상세보기</title>
-    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin.css">
+    <title>다음열매게시판목록</title>
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-request-detail.css">
 </head>
+
+
 <body>
 <div class="sidebar">
     <div class="logo-container">
@@ -15,37 +18,79 @@
     <nav class="nav">
         <ul class="side-menu">
             <li class="site-shortcut">
-                <a href="">사이트 바로가기</a>
+                <input type="button" class="side-menu-button" value="사이트 바로가기">
             </li>
             <div class="management-title">사이트 관리</div>
             <li class="management-menu-list">
-                <a href="">회원목록</a>
+                <input type="button" class="side-menu-button" value="메인페이지"
+                       onclick="location.href='admin-main.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">프로그램목록</a>
+                <input type="button" class="side-menu-button" value="회원목록"
+                       onclick="location.href='admin-member.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">상품관리</a>
+                <input type="button" class="side-menu-button" value="프로그램목록"
+                       onclick="location.href='admin-program.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">신고내역</a>
+                <input type="button" class="side-menu-button" value="상품관리"
+                       onclick="location.href='admin-product.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">다음열매게시판목록</a>
+                <input type="button" class="side-menu-button" value="신고내역"
+                       onclick="location.href='admin-report.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="다음열매게시판목록"
+                       onclick="location.href='admin-request.html'">
             </li>
         </ul>
     </nav>
 </div>
+<div class="management-top">
+    <div class="page-name">다음열매게시판목록</div>
+</div>
+
 <section class="management-main-content">
-    <div class="management-top">
-        <div class="page-name">요청 상세보기</div>
-    </div>
-    <div class="management-content-container">
-        <div class="management-list">
+
+    <div class="request-main">
+
+        <div class="request-box">
+
+            <table class="table-contents">
+                <tr>
+                    <td>게시물 번호</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>작성자 이름</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>작성자ID</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>작성일</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>제목</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="button-box">
+                <input type="button" name="request-list" value="게시글 목록" onClick="location.href='admin-request.html'"/>
+            </div>
+
 
         </div>
-    </div>
-    </div>
+
 </section>
 </body>
 </html>

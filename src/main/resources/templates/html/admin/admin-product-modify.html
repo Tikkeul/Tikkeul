@@ -4,48 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품 등록내용 수정</title>
-    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin.css">
+    <title>상품관리</title>
+    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin/admin.css">
 </head>
 <body>
-<div class="sidebar">
+
+<div class="sidebar sidebar-main">
     <div class="logo-container">
         <div class="logo">로고</div>
     </div>
     <nav class="nav">
         <ul class="side-menu">
             <li class="site-shortcut">
-                <a href="">사이트 바로가기</a>
+                <input type="button" class="side-menu-button" value="사이트 바로가기">
             </li>
             <div class="management-title">사이트 관리</div>
             <li class="management-menu-list">
-                <a href="">회원목록</a>
+                <input type="button" class="side-menu-button" value="메인페이지"
+                       onclick="location.href='admin-main.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">프로그램목록</a>
+                <input type="button" class="side-menu-button" value="회원목록"
+                       onclick="location.href='admin-member.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">상품관리</a>
+                <input type="button" class="side-menu-button" value="프로그램목록"
+                       onclick="location.href='admin-program.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">신고내역</a>
+                <input type="button" class="side-menu-button" value="상품관리"
+                       onclick="location.href='admin-product.html'">
             </li>
             <li class="management-menu-list">
-                <a href="">다음열매게시판목록</a>
+                <input type="button" class="side-menu-button" value="신고내역"
+                       onclick="location.href='admin-report.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="다음열매게시판목록"
+                       onclick="location.href='admin-request.html'">
             </li>
         </ul>
     </nav>
 </div>
-<section class="management-main-content">
-    <div class="management-top">
-        <div class="page-name">상품 등록내용 수정</div>
-    </div>
-    <div class="management-content-container">
-        <div class="management-list">
 
-        </div>
-    </div>
-    </div>
-</section>
+<div class="management-top">
+    <div class="page-name">상품관리</div>
+</div>
+
 </body>
 </html>

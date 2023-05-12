@@ -5,79 +5,321 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 페이지</title>
-    <link rel="stylesheet"  type="text/css" href="../../../static/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-main.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo-container">
-            <div class="logo">로고</div>
-        </div>
-        <nav class="nav">
-            <ul class="side-menu">
-                <li class="site-shortcut">
-                    <a href="">사이트 바로가기</a>
-                </li>    
-                <div class="management-title">사이트 관리</div>
-                <li class="management-menu-list">
-                    <a href="">회원목록</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">프로그램목록</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">상품관리</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">신고내역</a>
-                </li>
-                <li class="management-menu-list">
-                    <a href="">다음열매게시판목록</a>
-                </li>
-            </ul>
-        </nav>
+
+<div class="sidebar sidebar-main">
+    <div class="logo-container">
+        <div class="logo">로고</div>
     </div>
-    <section class="management-main-content">
-        <div class="management-top">
-            <div class="page-name">관리자 페이지</div>
+    <nav class="nav">
+        <ul class="side-menu">
+            <li class="site-shortcut">
+                <input type="button" class="side-menu-button" value="사이트 바로가기">
+            </li>
+            <div class="management-title">사이트 관리</div>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="메인페이지"
+                       onclick="location.href='admin-main.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="회원목록"
+                       onclick="location.href='admin-member.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="프로그램목록"
+                       onclick="location.href='admin-program.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="상품관리"
+                       onclick="location.href='admin-product.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="신고내역"
+                       onclick="location.href='admin-report.html'">
+            </li>
+            <li class="management-menu-list">
+                <input type="button" class="side-menu-button" value="다음열매게시판목록"
+                       onclick="location.href='admin-request.html'">
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="management-top">
+    <div class="page-name">관리자 페이지</div>
+</div>
+
+<section class="management-main-content">
+    <div class="management-big-box">
+        <div class="management-medium-box">
+            <div class="management-boxes">
+                <div>
+                    <p>최근 가입한 회원</p>
+
+                    <input type="image" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/add_create_new_plus_positive-512.png"
+                           class="see-details"
+                           onClick="location.href='admin-member.html'"/>
+                </div>
+                <div>
+                    <table class="management-table-main">
+                        <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>ID</th>
+                            <th>가입일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="management-boxes">
+                <div>
+                    <p>프로그램 목록</p>
+                    <input type="image" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/add_create_new_plus_positive-512.png"
+                           class="see-details"
+                           onClick="location.href='admin-program.html'"/>
+                </div>
+                <div>
+                    <table class="management-table-main">
+                        <thead>
+                        <tr>
+                            <th>프로그램명</th>
+                            <th>레벨</th>
+                            <th>내용</th>
+                            <th>작성일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
         </div>
-        <div class="management-preview-container">
-            <div class="management-preview">
-                <div class="preview-top">
-                    <h4 class="preview-title">회원목록</h4>
-                    <a href="" class="management-shortcut">더보기</a>
+        <div class="management-medium-box">
+            <div class="management-boxes">
+                <div>
+                    <p>상품관리</p>
+
+                    <input type="image" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/add_create_new_plus_positive-512.png"
+                           class="see-details"
+                           onClick="location.href='admin-product.html'"/>
+                </div>
+                <div>
+                    <table class="management-table-main">
+                        <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>레벨</th>
+                            <th>내용</th>
+                            <th>작성일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
-            <div class="management-preview">
-                <div class="preview-top"> 
-                    <h4 class="preview-title">프로그램목록</h4>
-                    <a href="" class="management-shortcut">더보기</a>
+            <div class="management-boxes">
+                <div>
+                    <p>신고내역</p>
+                    <input type="image" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/add_create_new_plus_positive-512.png"
+                           class="see-details" onclick="location.href='admin-report.html'"
+                    />
+                </div>
+                <div>
+                    <table class="management-table-main">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>신고내용</th>
+                            <th>신고일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
-            <div class="management-preview">
-                <div class="preview-top">
-                    <h4 class="preview-title">상품관리</h4>
-                    <a href="" class="management-shortcut">더보기</a>
+        </div>
+        <div class="management-medium-box">
+            <div class="management-boxes">
+                <div>
+                    <p>다음열매게시판목록</p>
 
+                    <input type="image" src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/add_create_new_plus_positive-512.png"
+                           class="see-details"
+                           onClick="location.href='admin-request.html'"/>
                 </div>
-            </div>
-            <div class="management-preview">
-                <div class="preview-top">
-                    <h4 class="preview-title">신고내역</h4>
-                    <a href="" class="management-shortcut">더보기</a>
+                <div>
+                    <table class="management-table-main">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>이름</th>
+                            <th>제목</th>
+                            <th>작성일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>12</td>
+                            <td>오명근</td>
+                            <td>이거 추가해주세요</td>
+                            <td>2023-05-12</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                </div>
-            </div>
-            <div class="management-preview">
-                <div class="preview-top">
-                    <h4 class="preview-title">다음열매게시판목록</h4>
-                    <a href="" class="management-shortcut">더보기</a>
-                    
                 </div>
             </div>
         </div>
     </div>
-    </section>
+</section>
+
 </body>
 </html>
