@@ -14,10 +14,6 @@ public interface UserMapper {
     //  관리자페이지에서 회원 리스트 조회
     public List<UserVO> adminSelectUserAll();
 
-    // 관리자페이지에서 회원 삭제
-    public void adminDeleteUser(Long id);
-
-
     //    아이디 중복검사
     public Optional<UserVO> selectByUserId(String identification);
 

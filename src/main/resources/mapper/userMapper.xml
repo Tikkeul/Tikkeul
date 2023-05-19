@@ -2,25 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tikkeul.app.mapper.UserMapper">
 
-<!-- 관리자페이지 유저 리스트 조회-->
     <select id="adminSelectUserAll" resultType="userVO">
         SELECT ID, NAME , IDENTIFICATION, ADDRESS, PHONENUMBER
         FROM USERS
     </select>
-
-    <!--  관리자페이지 유저 삭제  -->
-    <delete id="adminDeleteUser">
-        DELETE FROM USERS WHERE ID = #{id}
-    </delete>
-
-<!--    -->
 
     <select id="selectByUserId" resultType="UserVO">
     SELECT ID, IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, STATUS, ROLL, CREATEDDATE, PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, SAVINGLEVEL_ID
     FROM USERS;
 
     </select>
-
 
 <!--회원가입-->
     <insert id="insert">

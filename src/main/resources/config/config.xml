@@ -16,6 +16,5 @@
         <typeAlias type="com.tikkeul.app.domain.vo.SavingLevelVO" alias="savingLevelVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.SavingVO" alias="savingVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.UserVO" alias="userVO"/>
-        <typeAlias type="com.tikkeul.app.domain.dto.InquiryBoardDTO" alias="inquiryBoardDTO"/>
     </typeAliases>
 </configuration>
