@@ -29,10 +29,4 @@ public class ItemDAO {
     public Optional<OrderDTO> findReview(Long id) {
         return itemMapper.selectReview(id);
     }
-
-    public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
-    }
-
-    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
-    }
 }

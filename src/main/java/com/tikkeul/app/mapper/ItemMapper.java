@@ -20,9 +20,5 @@ public interface ItemMapper {
 
     //    후기 가져오기
     public Optional<OrderDTO> selectReview(Long id);
-//  메인페이지
-    public List<ItemDTO> selectAllItem();
-
-    public List<ItemDTO> selectAllOptionItem(Long savingLevelId);
 }
 

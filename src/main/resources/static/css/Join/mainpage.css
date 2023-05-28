@@ -629,10 +629,11 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureBarButton_lectureBarButton__2Xsxj {
+    margin-top: 0;
     padding-right: 8px;
     padding-left: 16px;
     height: 100%;
-    margin: 0 51px;
+    margin-left: 100px;
 }
 
 .SchoolLectureBarButton_lectureBarButton__2Xsxj .SchoolLectureBarButton_lectureBarLi__2shyU {
@@ -727,10 +728,9 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_background__2Kqf_.SchoolLectureListDesktop_visible__2lI79 {
+    background-image: url("https://cdn.wadiz.kr/ft/images/green001/2023/0510/20230510152215149_null.jpg/wadiz/thumbnail/252/format/jpg/quality/95/");
     transform: scale(1);
     opacity: 1;
-    width: 170px;
-    margin: 0 40px;
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_background__2Kqf_ {
@@ -765,7 +765,9 @@ button[class*=Button_button] {
     font-size: 12px;
 }
 
-
+.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureType__8_hUF .SchoolLectureListDesktop_reward__A5Tp2 {
+    background: #2e51ef;
+}
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureType__8_hUF i {
     display: inline-block;
@@ -782,7 +784,6 @@ button[class*=Button_button] {
     white-space: nowrap;
     font-size: 16px;
     font-weight: 500;
-    padding-top: 26px;
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureSub__3soFP {
@@ -805,6 +806,7 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureNum__oypsR em {
+    padding-right: 10px;
     color: #c04646;
     font-weight: 500;
 }
@@ -1139,25 +1141,4 @@ button[class*=Button_button] {
 
 .toastui-calendar-daygrid-cell {
     cursor: pointer;
-}
-.SchoolLectureBarButton_lectureBarButton__2Xsxj .SchoolLectureBarButton_lectureBarLi__2shyU .SchoolLectureBarButton_lectureTypeReward__2ZJCcT>em {
-    background: #ef2e5b;
-}
-.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #seed{
-    background-image: url("/image/programseedLogo.png");
-}
-.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #leaf{
-    background-image: url("/image/programleafLogo.png");
-}
-.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #tree{
-    background-image: url("/image/programtreeLogo.png");
-}
-.SchoolLectureListDesktop_reward__A5Tp1{
-    background-color: #2e51ef;
- }
-.SchoolLectureListDesktop_reward__A5Tp2 {
-    background: #9f8673;
-}
-.SchoolLectureListDesktop_reward__A5Tp3 {
-    background: #705f53;
 }

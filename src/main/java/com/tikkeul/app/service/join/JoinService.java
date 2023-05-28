@@ -13,17 +13,12 @@ public interface JoinService {
     public void join(UserVO userVO);
 
     //    로그인
-    public Optional<UserVO> login(String identification, String password);
+    public Optional<Long> login(String identification, String password);
+    //   카카오 회원가입
+
 
 //        카카오회원 업데이트
     public void updateKakaoUser(Optional<UserVO> kakaoUser);
-
 //         네이버유저 업데이트
     public void updateNaverUser(UserVO userVO);
-
-//         비밀번호 업데이트
-    public void updatePassword(String identification, String password);
-
-//        비밀번호 찾기
-    public String findPassword(String identification, String password);
 }

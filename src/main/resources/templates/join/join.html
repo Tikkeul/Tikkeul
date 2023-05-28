@@ -27,7 +27,7 @@
                             카카오로 시작하기
                         </span>
                 </button>
-                <button class="Button_button__3MO4n Button_lg__D7OVb Button_block__3npc4 SNSButtonList_naverButton__1rzZ_ SNSButtonList_spacer__38ac5" onclick="location.href='https://nid.naver.com/oauth2.0/authorize?response_type=token&client_id=ny2peuJ25fyfAu4Z7mI9&redirect_uri=http%3A%2F%2Flocalhost%3A10000%2Flogin%2Foauth2%2Fcode%2Fnaver&state=6d1726f6-864f-457c-a722-58f04da57f8d'" type="button">
+                <button class="Button_button__3MO4n Button_lg__D7OVb Button_block__3npc4 SNSButtonList_naverButton__1rzZ_ SNSButtonList_spacer__38ac5" type="button">
                     <span class="Button_children__raEW4">
                             <svg viewBox="0 0 32 32" focusable="false" role="presentation" class="withIcon_icon__2KxnX SNSButtonList_naverIcon__3TjPM" aria-hidden="true">
                                 <path d="M19.52 5.76v10.32L12.48 5.76H4.8v20.48h7.68V15.92l7.12 10.32h7.6V5.76z"></path>
@@ -211,6 +211,22 @@
                                                     </span>
                                                 </label>
                                             </div>
+                                            <!-- <button
+                                              class="AccordionCheckbox_accordionButton__2T705"
+                                              aria-label="내용 보기"
+                                            >
+                                              <svg
+                                                viewBox="0 0 32 32"
+                                                focusable="false"
+                                                role="presentation"
+                                                class="withIcon_icon__2KxnX"
+                                                aria-hidden="true"
+                                              >
+                                                <path
+                                                  d="M16 22.4L5.6 12l1.12-1.12L16 20.16l9.28-9.28L26.4 12 16 22.4z"
+                                                ></path>
+                                              </svg>
+                                            </button> -->
                                         </div>
                                         <div class="AccordionCheckbox_accordionHeader__7fp2J ServiceAgreementCheckbox_container__LME1_ TermsConfirmBody_service__2uPF1">
                                             <div data-testid="service-agreement-checkbox">
@@ -255,6 +271,22 @@
                                                     </span>
                                                 </label>
                                             </div>
+                                            <!-- <button
+                                              class="AccordionCheckbox_accordionButton__2T705"
+                                              aria-label="내용 보기"
+                                            >
+                                              <svg
+                                                viewBox="0 0 32 32"
+                                                focusable="false"
+                                                role="presentation"
+                                                class="withIcon_icon__2KxnX"
+                                                aria-hidden="true"
+                                              >
+                                                <path
+                                                  d="M16 22.4L5.6 12l1.12-1.12L16 20.16l9.28-9.28L26.4 12 16 22.4z"
+                                                ></path>
+                                              </svg>
+                                            </button> -->
                                         </div>
                                         <div class="AccordionCheckbox_accordionHeader__7fp2J ServiceAgreementCheckbox_container__LME1_ TermsConfirmBody_service__2uPF1">
                                             <div data-testid="service-agreement-checkbox">
@@ -305,19 +337,11 @@
     <div class="warn-modal">
         <div id="content-wrap"></div>
     </div>
-</div>   <div id="naver_id_login" style="display:none"></div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/js/Join/Join.js"></script>
 <script src="/js/header/header.js"></script>
 <script src="/js/modal/modal.js"></script>
-    <script type="text/javascript">
-        var naver_id_login = new naver_id_login("ny2peuJ25fyfAu4Z7mI9", "http://localhost:10000/login/oauth2/code/naver");
-        var state = naver_id_login.getUniqState();
-        naver_id_login.setButton("white", 2,40);
-        naver_id_login.setDomain(".service.com");
-        naver_id_login.setState(state);
-        naver_id_login.init_naver_id_login();
-    </script>
-    <!-- 네이버아디디로로그인 Callback페이지 처리 Script -->
+
 </html>

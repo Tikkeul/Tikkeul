@@ -1,22 +1,23 @@
 package com.tikkeul.app.controller;
 
-import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.UserMapper;
 import com.tikkeul.app.service.email.RegisterMail;
-import com.tikkeul.app.service.item.ItemService;
 import com.tikkeul.app.service.join.JoinService;
-import com.tikkeul.app.service.main.MainService;
+import com.tikkeul.app.service.login.LoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 @Controller
@@ -26,8 +27,8 @@ import java.util.Optional;
 public class JoinController {
     private final  UserMapper userMapper;
     private final JoinService joinService;
-    private final MainService mainService;
-    private final ItemService itemService;
+
+
 
 
     //    아이디 중복검사
@@ -41,7 +42,7 @@ public class JoinController {
     @GetMapping("join")
     public void goToJoin(UserVO userVO){;}
 
-//        회원가입
+    //        회원가입
     @PostMapping("join")
     public RedirectView join(UserVO userVO) {
         userVO.setRegisteredType("NORMAL");
@@ -58,14 +59,9 @@ public class JoinController {
     @PostMapping("login")
     public RedirectView login(String identification, String password, HttpSession session, RedirectAttributes redirectAttributes){
         log.info("들어옴");
-        final Optional<UserVO> foundUser = joinService.login(identification, password);
+        final Optional<Long> foundUser = joinService.login(identification, password);
         if(foundUser.isPresent()){
-            if(foundUser.get().getRoll().equals("ADMIN")){
-                return new RedirectView("/admin/main");
-            }if(foundUser.get().getStatus().equals("EXIT")){
-                return new RedirectView("/join/login");
-            }
-            session.setAttribute("id", foundUser.get().getId());
+            session.setAttribute("id", foundUser.get());
             return new RedirectView("/join/mainpage");
         }
         redirectAttributes.addFlashAttribute("login", "fail");
@@ -81,33 +77,7 @@ public class JoinController {
 
 //    메인페이지로 이동
     @GetMapping("mainpage")
-    public void goToMain(Model model, HttpSession session){
-        model.addAttribute("savinglevels",mainService.getsavinglevelList());
-    }
-
-
-
-//  메인페이지에서 모든 상품 불러오기
-    @GetMapping("getItemAll")
-    @ResponseBody
-    public List<ItemDTO> getItemAll(Model model, HttpSession session){
-       return itemService.getitemList();
-    }
-
-//  메인 페이지에서 해당 상품 불러오기
-    @GetMapping("getItem")
-    @ResponseBody
-    public List<ItemDTO> getItem(@RequestParam("savingLevelId") Long savingLevelId, Model model, HttpSession session){
-       return itemService.getOptionItemList(savingLevelId);
-    }
-
-
-
-
-
-
-
-
+    public void goToMain(HttpSession session){;}
 
 
 
@@ -122,46 +92,30 @@ public class JoinController {
         System.out.println("인증코드 : " + code);
         return code;
     }
-//   아이디 찾기 페이지
+//   아이디 찾기
     @GetMapping("findid")
-    public void goTofindid(){;}
+    public void goTofindid(HttpSession session){;}
 
-//  비밀번호 찾기 페이지
-    @GetMapping("findpw")
+    @GetMapping("changePW")
+    public void goToChangePassword(){
+        ;
+    }
+    @GetMapping("findPW")
     public void goToFindPassword(){
         ;
     }
 
-//  비밀번호 변경
-    @PostMapping("changepw")
-    @ResponseBody
-    public String changePassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
-        joinService.updatePassword(identification,password);
-        return "/join/login";
-    }
 
-//  비밀번호 조회
-    @PostMapping("gofindpw")
-    @ResponseBody
-    public String findPassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
-        return joinService.findPassword(identification,password);
-    }
-
-
-//  네이버인지 아닌지 판단해서 계정을 업데이트 후 로그인시키거나 회원가입시킴
     @GetMapping("joinOrUpdate")
     @ResponseBody
     public String joinNaver(@RequestParam(value="identification", required=false) String identification,@RequestParam(value="name", required=false)String name,@RequestParam(value="id", required=false) String id, HttpSession session) {
+        log.info("들엉옴");
         UserVO userVO = new UserVO();
         userVO.setIdentification(identification);
         userVO.setPassword(id);
         userVO.setName(name);
         Optional<UserVO> foundId = joinService.checkId(identification);
         if(foundId.isPresent()){
-            if(foundId.get().getRoll().equals("ADMIN")){
-                return "/admin/main";
-            }
-            if(foundId.get().getStatus().equals("EXIT")){return "/join/login";}
             if (foundId.get().getRegisteredType().equals("KAKAO") || foundId.get().getRegisteredType().equals("NORMAL") ) {
                 return "/join/login";
             }else{
@@ -180,15 +134,6 @@ public class JoinController {
         return "/join/mainpage";
     }
 
-//  이메일이 소셜회원인지 체크
-    @PostMapping("checkemailisSocial")
-    @ResponseBody
-    public String checkidisok(@RequestParam("email") String email) throws Exception {
-        if(joinService.checkId(email).isEmpty()) {
-            return "false";
-        }else if(joinService.checkId(email).isPresent()) {
-            return joinService.checkId(email).get().getRegisteredType();
-        }
-        return null;
-    }
+
+
 }

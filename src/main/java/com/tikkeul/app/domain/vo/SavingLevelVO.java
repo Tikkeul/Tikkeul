@@ -11,6 +11,6 @@ public class SavingLevelVO {
     private Long id;
     private String name;
     private int goalMoney;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    private int dailyMoney;
-    private String content;
+    private int dailyMoney;
+
 }

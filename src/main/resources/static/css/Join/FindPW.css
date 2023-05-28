@@ -466,6 +466,19 @@ button:not(:disabled), input:not(:disabled), input:not(:disabled)+label {
     margin-right: 8px;
 }
 
+.FooterContainer_container__3LibG .FooterContainer_leftSection__2BtHF .FooterContainer_buttonBlock__FQR2E .FooterContainer_directBtn__2ICcT {
+    line-height: 28px;
+    letter-spacing: -.3px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 4px 0;
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    color: #495057;
+}
 
 .FooterContainer_container__3LibG .FooterContainer_leftSection__2BtHF .FooterContainer_buttonBlock__FQR2E .FooterContainer_directBtn__2ICcT i {
     margin-left: 8px;
@@ -545,67 +558,4 @@ button:not(:disabled), input:not(:disabled), input:not(:disabled)+label {
 .button.primary:hover {
     border-color: #4874e1;
     background-color: #4874e1;
-}
-.button.primary:disabled{
-    border-color: #abbeef;
-    background-color: #abbeef;
-}
-.button.primary:disabled:hover{
-     border-color: #abbeef;
-     background-color: #abbeef;
- }
-.container .page-body .label {
-    line-height: 24px;
-}
-.container .page-body .text-field {
-    position: relative;
-}
-.container .page-body .text-field .input-text {
-    transition-property: border-color, background-color, color;
-    transition-duration: 0.15s;
-    outline: none;
-    border: 1px solid #dde2e6;
-    border-radius: 3px;
-    background-color: #fff;
-    padding-right: 16px;
-    padding-left: 16px;
-    width: 100%;
-    color: #212529;
-    box-sizing: border-box;
-    line-height: 28px;
-    letter-spacing: -0.3px;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.container .page-body .text-field .input-text {
-    margin: 4px 0;
-    padding: 0 16px;
-    width: 100%;
-    height: 48px;
-    border: 1px solid #dde2e6;
-    border-radius: 3px;
-    line-height: 48px;
-    font-size: 17px;
-    outline: none;
-}
-#ppassword, #ppasswordcheck {
-    font-size: 13px;
-    color: #f66;
-}
-.container .page-header {
-    padding-top: 30px;
-    padding-bottom: 44px;
-}
-.container .page-header h2 {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.33;
-}
-.container .page-header .desc {
-    margin-top: 16px;
-    color: #495057;
-}
-.container .page-body .btn-wrap {
-    margin-top: 36px;
 }

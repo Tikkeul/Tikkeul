@@ -34,7 +34,7 @@ public class UserDAO {
     }
 
     //    로그인
-    public Optional<UserVO> findByUserIdAndUserPassword( String identification, String password){
+    public Optional<Long> findByUserIdAndUserPassword( String identification, String password){
         return userMapper.selectByUserIdAndUserPassword(identification,password);
     };
 
@@ -42,11 +42,4 @@ public class UserDAO {
         userMapper.updateNaver(userVO);
     }
 
-    public void updatepassword(String identification, String password) {
-        userMapper.updatepassword(identification, password);
-    }
-
-    public String selectpassword(String identification, String password) {
-       return userMapper.selectpassword(identification,password);
-    }
 }

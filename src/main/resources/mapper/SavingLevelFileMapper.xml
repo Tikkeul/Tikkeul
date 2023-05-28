@@ -6,4 +6,5 @@
         (ID, SAVINGLEVEL_ID)
         VALUES(#{id}, #{savinglevelId})
     </insert>
+    
 </mapper>

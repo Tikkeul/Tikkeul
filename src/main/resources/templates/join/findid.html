@@ -8,17 +8,18 @@
 <link rel="stylesheet" href="/css/header/headerking.css">
 <body>
     <div id="page-container">
-        <div class="web-header" th:replace="~{/header/header::.web-header}"></div>
+        <div class="web-header" th:replace="~{/header/header::.web-header}" >
+        </div>
         <div class="account-find">
             <div class="page-header">
                 <h2 class="text display1">아이디∙비밀번호 찾기</h2>
                 <div class="tab-list">
                     <ul>
                         <li class="active">
-                            <a href="/join/findid">아이디 찾기</a>
+                            <a href="">아이디 찾기</a>
                         </li>
                         <li>
-                            <a href="/join/findpw">비밀번호 찾기</a>
+                            <a href="">비밀번호 찾기</a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +47,9 @@
             </div>
         </div>
         <div >
-            <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+            <footer id="footer" th:replace="~{/footer/footer::footer}">
+
+            </footer>
         </div>
     </div>
 </body>
