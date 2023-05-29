@@ -77,7 +77,14 @@
 
     <!--같은레벨 제품 불러오기 : 제품 상세페이지-->
     <select id="selectItemsEqualsLevel" resultType="orderDTO">
-
+    SELECT i.ID, i.NAME, PRICE, BRAND, s.NAME, AVG(SCORE)
+    FROM ORDERS o JOIN USERS u
+    ON o.USER_ID = u.ID JOIN ITEM i
+    ON o.ITEM_ID = i.ID JOIN REVIEW r
+    ON o.ID = r.ORDER_ID JOIN SAVINGLEVEL s
+    ON i.SAVINGLEVEL_ID  = s.ID
+    GROUP BY i.ID, i.NAME, PRICE, BRAND, s.NAME
+    HAVING ;
     </select>
 
 
