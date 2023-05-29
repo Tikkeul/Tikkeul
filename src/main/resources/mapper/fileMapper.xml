@@ -12,12 +12,13 @@
 
     <insert id="insert">
         <selectKey keyProperty="id" order="BEFORE" resultType="Long">
-            SELECT SEQ_FILE.NEXTVAL FROM DUAL
+            SELECT SEQ_FILES.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO FILE
+        INSERT INTO FILES
         (ID, FILE_SIZE, ORIGIN_NAME, UUID, FILE_TYPE, FILE_PATH)
-        VALUES(#{id}, #{size}, #{originName}, #{uuid}, #{fileType}, #{path})
+        VALUES(#{id}, #{fileSize}, #{originName}, #{uuid}, #{fileType}, #{filePath})
     </insert>
+
     <insert id="insertfile">
     <selectKey keyProperty="id" order="BEFORE" resultType="Long">
         SELECT SEQ_FILES.NEXTVAL FROM DUAL
@@ -26,4 +27,27 @@
         (ID, FILE_SIZE, ORIGIN_NAME, UUID, FILE_TYPE, FILE_PATH)
         VALUES(#{id}, #{size}, #{originName}, #{uuid}, #{fileType}, #{path})
         </insert>
+
+    <insert id="insertItem">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            SELECT SEQ_FILES.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO FILES
+        (ID, FILE_SIZE, ORIGIN_NAME, UUID, FILE_TYPE, FILE_PATH)
+        VALUES(#{id}, #{fileSize}, #{originName}, #{uuid}, #{fileType}, #{filePath})
+    </insert>
+
+    <select id="savingLevelSelectlAll" resultType="savingLevelFileDTO">
+        SELECT F.ID, F.FILE_PATH, F.UUID, F.ORIGIN_NAME, F.FILE_SIZE, FILE_TYPE, SAVINGLEVEL_ID
+        FROM FILES F JOIN SAVINGLEVELFILE S
+        ON F.ID = S.ID AND SAVINGLEVEL_ID = #{savinglevelId}
+    </select>
+
+    <delete id="savingLevelDelete">
+        DELETE FROM FILES
+        WHERE ID = #{id}
+    </delete>
+
+
+
 </mapper>

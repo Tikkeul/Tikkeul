@@ -15,7 +15,6 @@
         <div class="logo-container">
             <img src="/image/Logo.png" class="admin-logo">
         </div>
-
         <nav class="nav">
             <ul class="side-menu">
                 <li class="site-shortcut">
@@ -25,27 +24,27 @@
                 <div class="management-title">사이트 관리</div>
                 <li class="management-menu-list">
                     <input type="button" class="side-menu-button" value="메인페이지"
-                           onclick="location.href='admin-main.html'">
+                           onclick="location.href='/admin/main'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="회원목록"
-                           onclick="location.href='admin-member.html'">
+                    <input type="button" class="side-menu-button" value="회원 목록"
+                           onclick="location.href='/admin/user/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="프로그램목록"
-                           onclick="location.href='admin-program.html'">
+                    <input type="button" class="side-menu-button" value="프로그램 목록"
+                           onclick="location.href='/admin/program/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="상품관리"
-                           onclick="location.href='admin-product.html'">
+                    <input type="button" class="side-menu-button" value="상품 목록"
+                           onclick="location.href='/admin/item/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="신고내역"
-                           onclick="location.href='admin-report.html'">
+                    <input type="button" class="side-menu-button" value="도란게시판 목록"
+                           onclick="location.href='/admin/doranBoard/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="문의게시판목록"
-                           onclick="location.href='admin-QnA.html'">
+                    <input type="button" class="side-menu-button" value="문의게시판 목록"
+                           onclick="location.href='/admin/inquiry/list'">
                 </li>
             </ul>
         </nav>
@@ -60,19 +59,19 @@
 
             <div class="product-box">
                 <form th:action="@{/admin/item/list}">
-                <div class="search-container">
-                    <select name="type">
-                        <option value="n" th:selected="${search.type eq 'n'}" >상품명</option>
-                        <option value="i" th:selected="${search.type eq 'i'}">상품번호</option>
-                    </select>
-                    <input type="text" name="keyword" id="search" th:value="${search.keyword}"/>
-                    <button type="submit" class="search"></button>
-                    <div>
-                        <input type="button" class="registration" name="registration" value="등록"
-                               onclick="location.href='admin-product-registration.html'"/>
-                        <input type="button" class="delete" id="delete-button" name="delete" value="삭제"/>
+                    <div class="search-container">
+                        <select name="type">
+                            <option value="n" th:selected="${search.type eq 'n'}" >상품명</option>
+                            <option value="i" th:selected="${search.type eq 'i'}">상품번호</option>
+                        </select>
+                        <input type="text" name="keyword" id="search" th:value="${search.keyword}"/>
+                        <button type="submit" class="search"></button>
+                        <div>
+                            <input type="button" class="registration" name="registration" value="등록"
+                                   onclick="location.href='/admin/item/write'"/>
+                            <input type="button" class="delete" id="delete-button" name="delete" value="삭제"/>
+                        </div>
                     </div>
-                </div>
                 </form>
 
                 <div class="table-content">
@@ -80,8 +79,7 @@
                         <tr>
                             <th><input type="checkbox"  class="all"/></th>
                             <th>상품 번호</th>
-                             <th>수량</th>
-                            <th>레벨</th>
+                            <th>수량</th>
                             <th>상품명</th>
                             <th>가격</th>
                         </tr>
@@ -102,7 +100,7 @@
             </div>
         </div>
     </section>
-</body>
+    </body>
 </main>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/js/admin/checkbox.js"></script>

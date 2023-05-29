@@ -6,4 +6,10 @@
         (ID, SAVINGLEVEL_ID)
         VALUES(#{id}, #{savinglevelId})
     </insert>
+
+    <delete id="delete">
+        DELETE FROM SAVINGLEVELFILE
+        WHERE SAVINGLEVEL_ID = #{savinglevelId}
+    </delete>
+
 </mapper>

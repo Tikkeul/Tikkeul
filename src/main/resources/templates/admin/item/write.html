@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/admin/admin.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/admin/admin-product-registration.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/admin-product-registration.css">
 </head>
 <body>
 <main>
@@ -56,75 +56,78 @@
         </div>
 
         <div class="registration-main">
-            <form th:action="@{admin/program/write}" method="post">
+            <form th:action="@{/admin/item/write}" method="post" th:object="${itemDTO}" name="writeForm">
                 <div class="registration-box">
 
                     <table class="table-contents">
                         <tr>
                             <td>상품명</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{name}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>가격</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{price}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>수량</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>판매상태</td>
-                            <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{originStock}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>브랜드</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{brand}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>카테고리</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{category}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>레벨</td>
                             <td>
-                                <input type="text" name="" value="" class="registration-input">
+                                <input th:field="*{savingLevelName}" type="text" name="" value="" class="registration-input">
                             </td>
                         </tr>
                         <tr>
                             <td>썸네일 이미지</td>
                             <td>
-                                <form method="post" enctype="multipart/form-data">
-                                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*"
-                                           onchange="loadFile(this)">
-                                    <img src="">
-                                </form>
+                                <label for="upload1" class="attach">
+                                    <img src="" class="thumbnail">
+                                    <div class="x">
+                                        <img src="/image/x.png">
+                                    </div>
+                                    <h6 class="plus">+</h6>
+                                    <h6>대표 이미지</h6>
+                                </label>
                             </td>
                         </tr>
                         <tr>
                             <td>상세 이미지</td>
                             <td>
-                                <form method="post" enctype="multipart/form-data">
-                                    <input type="file" id="chooseFile" name="chooseFile" accept="image/*"
-                                           onchange="loadFile(this)">
-                                </form>
+                                <label for="upload2" class="attach">
+                                    <img src="" class="thumbnail">
+                                    <div class="x">
+                                        <img src="/image/x.png">
+                                    </div>
+                                    <h6 class="plus">+</h6>
+                                    <h6>이미지 추가</h6>
+                                </label>
                             </td>
                         </tr>
                     </table>
+                    <input type="file" id="upload1" class="upload" style="display: none;">
+                    <input type="file" id="upload2" class="upload" style="display: none;">
                     <div class="button-box">
                         <input type="button" name="report-list" value="상품목록" onClick="location.href='admin-product.html'"/>
-                        <input type="submit" name="report-answer" value="등록완료" onclick=""/>
+                        <input type="button" name="report-answer" value="등록완료" class="ok-button"/>
                     </div>
                 </div>
             </form>
@@ -132,4 +135,6 @@
     </section>
 </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/js/admin/write.js"></script>
 </html>

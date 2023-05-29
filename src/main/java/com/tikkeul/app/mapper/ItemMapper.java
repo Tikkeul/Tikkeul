@@ -21,6 +21,7 @@ public interface ItemMapper {
     //    후기 가져오기
     public Optional<OrderDTO> selectScoreAndCountOfReview(Long id);
 
+    public void insertItem(ItemDTO itemDTO);
 
 
 

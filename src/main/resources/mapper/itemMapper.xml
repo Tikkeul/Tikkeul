@@ -87,7 +87,23 @@
     HAVING ;
     </select>
 
-
+    <insert id="insertItem">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            SELECT SEQ_SAVINGLEVEL.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO ITEM (
+        ID, "NAME", PRICE,
+        ORIGIN_STOCK, BRAND, CATEGORY, SAVINGLEVEL_ID
+        )
+        VALUES(
+        #{id}, #{name}, #{price}, #{originStock},
+        #{brand}, #{category}
+        (
+        SELECT ID FROM SAVINGLEVEL
+        WHERE NAME = #{name}
+        )
+        )
+    </insert>
 
 
 

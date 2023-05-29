@@ -7,11 +7,17 @@
     <title>프로그램목록</title>
     <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/admin/admin-program.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/modal.css">
 </head>
 
 
 <body>
 <main>
+    <div class="modal">
+        <div class="warn-modal">
+            <div id="content-wrap"></div>
+        </div>
+    </div>
     <div class="sidebar">
         <div class="logo-container">
             <img src="/image/Logo.png" class="admin-logo">
@@ -20,32 +26,32 @@
             <ul class="side-menu">
                 <li class="site-shortcut">
                     <input type="button" class="side-menu-button" value="사이트 바로가기"
-                           onclick="location.href='../mypage/main.html'">
+                           onclick="location.href='/join/mainpage'">
                 </li>
                 <div class="management-title">사이트 관리</div>
                 <li class="management-menu-list">
                     <input type="button" class="side-menu-button" value="메인페이지"
-                           onclick="location.href='admin-main.html'">
+                           onclick="location.href='/admin/main'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="회원목록"
-                           onclick="location.href='admin-member.html'">
+                    <input type="button" class="side-menu-button" value="회원 목록"
+                           onclick="location.href='/admin/user/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="프로그램목록"
-                           onclick="location.href='admin-program.html'">
+                    <input type="button" class="side-menu-button" value="프로그램 목록"
+                           onclick="location.href='/admin/program/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="상품관리"
-                           onclick="location.href='admin-product.html'">
+                    <input type="button" class="side-menu-button" value="상품 목록"
+                           onclick="location.href='/admin/item/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="신고내역"
-                           onclick="location.href='admin-report.html'">
+                    <input type="button" class="side-menu-button" value="도란게시판 목록"
+                           onclick="location.href='/admin/doranBoard/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="문의게시판목록"
-                           onclick="location.href='admin-QnA.html'">
+                    <input type="button" class="side-menu-button" value="문의게시판 목록"
+                           onclick="location.href='/admin/inquiry/list'">
                 </li>
             </ul>
         </nav>
@@ -72,22 +78,22 @@
                     <div>
                         <input type="button" class="registration" name="registration" value="등록"
                                onclick="location.href='/admin/program/write'"/>
-                        <input type="button" class="delete" id="delete-button" name="delete" value="삭제"/>
+                        <input type="button" class="delete"  value="삭제" onclick="deletePrograms(getSelectedProgramIds())"/>
                     </div>
                 </div>
 
                 <div class="table-content">
                     <table>
                         <tr>
-                            <th><input type="checkbox" class="all"/></th>
+                            <th><input type="checkbox" id="allSelect"/></th>
                             <th>번호</th>
                             <th>레벨</th>
                             <th>목표 금액</th>
                             <th>일일 금액</th>
                         </tr>
-                        <tr onclick="location.href='admin-program-detail.html'" th:each="programs : ${programs}">
+                        <tr th:onclick="|location.href='@{/admin/program/detail(id=${programs.id})}'|" th:each="programs : ${programs}">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
-                                <input type="checkbox" name="table-row" class="term" th:value="${programs.id}"/>
+                                <input type="checkbox" name="check" class="term programCheckbox" th:value="${programs.id}"/>
                             </td>
                             <td th:text="${programs.id}"></td>
                             <td th:text="${programs.name}"></td>
@@ -106,9 +112,11 @@
 </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/admin/checkbox.js"></script>
-<script src="/js/admin/delete-button.js"></script>
+<script src="/js/admin/allcheckbox.js"></script>
+<script src="/js/admin/deleteprogram.js"></script>
+<script src="/js/admin/modal.js"></script>
 <script th:inline="javascript">
     let programs = [[${programs}]];
 </script>
+
 </html>

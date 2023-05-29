@@ -6,7 +6,7 @@
             SELECT SEQ_SAVINGLEVEL.NEXTVAL FROM DUAL
         </selectKey>
         INSERT INTO SAVINGLEVEL (ID, NAME, GOAL_MONEY, DAILY_MONEY)
-        VALUES(SEQ_SAVINGLEVEL.NEXTVAL, #{name}, #{goalMoney}, #{dailyMoney})
+        VALUES(#{id}, #{name}, #{goalMoney}, #{dailyMoney})
     </insert>
 
     <select id="admminSelectSavingLevelAll" resultType="savingLevelVO">
@@ -18,5 +18,22 @@
         SELECT F.ID, SAVINGLEVEL_ID, SL.NAME SAVINGLEVEL_NAME, GOAL_MONEY, DAILY_MONEY, CONTENT ,F.ID, FILE_SIZE , FILE_ORIGIN_NAME, FILE_PATH , FILE_UUID, FILE_TYPE
         FROM SAVINGLEVEL SL JOIN SAVINGLEVELFILE SLF ON SL.ID = SLF.SAVINGLEVEL_ID JOIN FILES F ON F.ID = SLF.ID AND SL.ID != 0
     </select>
+
+    <select id="adminSelectSavingLevel" resultType="savingLevelDTO">
+        SELECT ID, NAME, GOAL_MONEY, DAILY_MONEY
+        FROM SAVINGLEVEL
+        WHERE ID = #{id}
+    </select>
+
+    <update id="adminUpdateSavingLevel">
+        UPDATE SAVINGLEVEL
+        SET NAME = #{name} , GOAL_MONEY = #{goalMoney} , DAILY_MONEY = #{dailyMoney}
+        WHERE ID = #{id}
+    </update>
+
+    <delete id="adminDeleteSavingLevel">
+        DELETE FROM SAVINGLEVEL
+        WHERE ID = #{id}
+    </delete>
 
 </mapper>

@@ -29,26 +29,26 @@
                 <div class="management-title">사이트 관리</div>
                 <li class="management-menu-list">
                     <input type="button" class="side-menu-button" value="메인페이지"
-                           onclick="location.href='admin-main.html'">
+                           onclick="location.href='/admin/main'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="회원 관리"
+                    <input type="button" class="side-menu-button" value="회원 목록"
                            onclick="location.href='/admin/user/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="프로그램 관리"
-                           onclick="location.href=''">
+                    <input type="button" class="side-menu-button" value="프로그램 목록"
+                           onclick="location.href='/admin/program/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="상품관리"
+                    <input type="button" class="side-menu-button" value="상품 목록"
                            onclick="location.href='/admin/item/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="도란도란 게시판 관리"
+                    <input type="button" class="side-menu-button" value="도란게시판 목록"
                            onclick="location.href='/admin/doranBoard/list'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="문의게시판 관리"
+                    <input type="button" class="side-menu-button" value="문의게시판 목록"
                            onclick="location.href='/admin/inquiry/list'">
                 </li>
             </ul>
@@ -66,13 +66,13 @@
 
                 <div class="member-search-container">
                     <form th:action="@{/admin/user/list}">
-                    <select name="type">
-                        <option value="n" th:selected="${search.type eq 'n'}">이름</option>
-                        <option value="i" th:selected="${search.type eq 'i'}">ID</option>
-                        <option value="s" th:selected="${search.type eq 's'}">계정상태</option>
-                    </select>
-                    <input type="text" name="keyword" id="search" th:value="${search.keyword}"/>
-                    <button type="submit" class="search"></button>
+                        <select name="type">
+                            <option value="n" th:selected="${search.type eq 'n'}">이름</option>
+                            <option value="i" th:selected="${search.type eq 'i'}">ID</option>
+                            <option value="s" th:selected="${search.type eq 's'}">계정상태</option>
+                        </select>
+                        <input type="text" name="keyword" id="search" th:value="${search.keyword}"/>
+                        <button type="submit" class="search"></button>
                     </form>
                     <div>
                         <input type="button" onclick="deleteLectures(getSelectedLectureIds())" class="member-modify" value="수정"/>
@@ -93,18 +93,18 @@
                             <th>계정상태</th>
                             </thead>
                             <tbody>
-<!--                                </tr>-->
-<!--                                <tr th:each="users : ${users}">-->
-<!--                                    <td>-->
-<!--                                        <input type="checkbox" name="table-row" class="term"/>-->
-<!--                                    </td>-->
-<!--                                    <td th:text="${users.id]"></td>-->
-<!--                                    <td th:text="${users.name}"></td>-->
-<!--                                    <td th:text="${users.identification}"></td>-->
-<!--                                    <td th:text="${users.address}"></td>-->
-<!--                                    <td th:text="${users.phoneNumber}"></td>-->
-<!--                                    <td th:text="${users.status}"></td>-->
-<!--                                </tr>-->
+                            <!--                                </tr>-->
+                            <!--                                <tr th:each="users : ${users}">-->
+                            <!--                                    <td>-->
+                            <!--                                        <input type="checkbox" name="table-row" class="term"/>-->
+                            <!--                                    </td>-->
+                            <!--                                    <td th:text="${users.id]"></td>-->
+                            <!--                                    <td th:text="${users.name}"></td>-->
+                            <!--                                    <td th:text="${users.identification}"></td>-->
+                            <!--                                    <td th:text="${users.address}"></td>-->
+                            <!--                                    <td th:text="${users.phoneNumber}"></td>-->
+                            <!--                                    <td th:text="${users.status}"></td>-->
+                            <!--                                </tr>-->
                             </tbody>
                     </table>
                     <div id="paging-wrap">

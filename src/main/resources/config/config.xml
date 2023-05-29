@@ -12,6 +12,7 @@
         <typeAlias type="com.tikkeul.app.domain.dto.InquiryBoardDTO" alias="inquiryBoardDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.ItemFileVO" alias="itemFileVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.ItemVO" alias="itemVO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.ItemDTO" alias="itemDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.LikeVO" alias="likeVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.OrderVO" alias="orderVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.ReviewVO" alias="reviewVO"/>

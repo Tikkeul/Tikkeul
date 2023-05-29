@@ -38,6 +38,18 @@ public class ItemDAO {
     public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
     }
 
+
+    
+
+
     public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
     }
+
+    //    제품 등록 ( 관리자 )
+    public void saveItem(ItemDTO itemDTO){
+        itemMapper.insertItem(itemDTO);
+    }
+
+
 }
+

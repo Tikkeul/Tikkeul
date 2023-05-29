@@ -6,10 +6,13 @@ import com.tikkeul.app.dao.ItemFileDAO;
 import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import com.tikkeul.app.domain.type.CategoryType;
+import com.tikkeul.app.domain.type.FileType;
+import com.tikkeul.app.domain.vo.ItemFileVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -53,6 +56,22 @@ public class ItemServiceImpl implements ItemService {
         return itemDAO.findAllOptionItem(savingLevelId);
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void writeItem(ItemDTO itemDTO) {
+        itemDAO.saveItem(itemDTO);
+        for(int i=0; i<itemDTO.getFiles().size(); i++){
+            itemDTO.getFiles().get(i).setItemId(itemDTO.getId());
+            itemDTO.getFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            fileDAO.saveItem(itemDTO.getFiles().get(i));
+        }
+        itemDTO.getFiles().forEach(itemFileDTO ->
+        { ItemFileVO itemFileVO = new ItemFileVO();
+            itemFileVO.setId(itemFileDTO.getId());
+            itemFileVO.setItemId(itemFileDTO.getItemId());
+            itemFileDAO.saveItem(itemFileVO);
+        });
+    }
 
 
 }

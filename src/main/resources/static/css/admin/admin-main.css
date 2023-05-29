@@ -66,3 +66,12 @@ div.management-boxes {
     border-radius: 16px;
     height: 16px;
 }
+
+.management-boxes {
+    cursor: pointer;
+}
+.management-boxes:hover {
+    transform: scale(1.05);
+    transition: all 1s;
+    box-shadow: 0 5px 3px -3px #777;
+}

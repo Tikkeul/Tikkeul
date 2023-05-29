@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도란도란</title>
+    <title>프로그램목록</title>
     <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
-    <link rel="stylesheet" type="text/css" href="/css/admin/admin-dorandoran-detail.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/admin-program-detail.css">
 </head>
 <body>
 <main>
-    <div class="sidebar">
+    <div class="sidebar sidebar-main">
         <div class="logo-container">
             <img src="/image/Logo.png" class="admin-logo">
         </div>
@@ -49,56 +49,67 @@
         </nav>
     </div>
 
+
     <section class="management-main-content">
         <div class="management-top">
-            <div class="page-name">도란도란 상세보기</div>
+            <div class="page-name">프로그램 상세보기</div>
         </div>
 
-        <div class="doran-main">
+        <div class="detail-main">
 
-            <div class="doran-box">
+            <div class="detail-box">
 
                 <table class="table-contents">
                     <tr>
-                        <td>글 번호</td>
-                        <td th:text="${doranBoard.id}"></td>
+                        <td>레벨</td>
+                        <td th:text="${savingLevels.name}"></td>
                     </tr>
                     <tr>
-                        <td>ID</td>
-                        <td th:text="${doranBoard.identification}"></td>
+                        <td>목표 금액</td>
+                        <td th:text="${savingLevels.goalMoney}"></td>
                     </tr>
                     <tr>
-                        <td>제목</td>
-                        <td th:text="${doranBoard.title}"></td>
+                        <td>일일 저축 금액</td>
+                        <td th:text="${savingLevels.dailyMoney}"></td>
+                    </tr>
+                    <tr class="program-detail">
+                        <td>썸네일 이미지</td>
+                        <td>
+                            <img
+                                    width="150px"
+                                    height="150px"
+                                    sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw"\
+                                    class="thumbnailimage"
+                            >
+                        </td>
                     </tr>
                     <tr>
-                        <td class="doran-content">내용</td>
-                        <td class="doran-content" th:text="${doranBoard.content}"></td>
-                    </tr>
-                    <tr>
-                        <td>작성일</td>
-                        <td th:text="${doranBoard.registerDate}"></td>
-                    </tr>
-                    <tr>
-                        <td>조회수</td>
-                        <td th:text="${doranBoard.viewCount}"></td>
+                        <td>내용 이미지</td>
+                        <td>
+                            <img
+                                    width="150px"
+                                    height="150px"
+                                    sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw"
+                                    class="thumbnailimage"
+                            >
+                        </td>
                     </tr>
                 </table>
                 <div class="button-box">
-                    <input type="button" name="report-list" value="도란도란 목록"
-                           onClick="location.href='/admin/doranBoard/list'"/>
+                    <input type="button" name="report-list" value="프로그램목록"
+                           onClick="location.href='/admin/program/list'"/>
+                    <input type="button" name="report-answer" value="수정"
+                           th:onclick="|location.href='@{/admin/program/modify(id=${savingLevels.id})}'|"/>
                 </div>
-
-
             </div>
-
         </div>
     </section>
-
 </main>
-</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script th:inline="javascript">
-    let doranBoard = [[${doranBoard}]];
-    console.log(doranBoard);
+    let savingLevels = [[${savingLevels}]];
+    let files = [[${savingLevels.files}]]
 </script>
+<script src="/js/admin/detailprogram.js"></script>
+</body>
 </html>

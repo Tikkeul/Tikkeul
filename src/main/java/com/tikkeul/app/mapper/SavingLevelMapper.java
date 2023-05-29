@@ -6,6 +6,7 @@ import com.tikkeul.app.domain.vo.SavingLevelVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface SavingLevelMapper {
@@ -14,5 +15,13 @@ public interface SavingLevelMapper {
     public List<SavingLevelVO> admminSelectSavingLevelAll();
 
     public List<SavingLevelFileDTO> savingLevelFileAll();
+
+    public Optional<SavingLevelDTO> adminSelectSavingLevel(Long id);
+
+    public void adminUpdateSavingLevel(SavingLevelDTO savingLevelDTO);
+
+    public void adminDeleteSavingLevel(Long id);
+
+
 
 }

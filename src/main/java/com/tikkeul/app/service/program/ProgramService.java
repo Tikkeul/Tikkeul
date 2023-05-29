@@ -15,10 +15,10 @@ public interface ProgramService {
     public void writeSavingLevel(SavingLevelDTO savingLevelDTO);
 
     //    프로그램 조회 ( 관리자 )
-//    public List<SavingLevelVO> getSavingLevelAll();
+    public List<SavingLevelVO> getSavingLevelAll();
 
     //    프로그램 상세 조회 ( 괸리자 )
-//    public SavingLevelDTO getSavingLevel(Long id);
+    public SavingLevelDTO getSavingLevel(Long id);
 
     //    프로그램 수정 ( 관리자 )
     public void modify(SavingLevelDTO savingLevelDTO);

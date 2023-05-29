@@ -25,6 +25,6 @@ public class ItemDTO {
     private String savingLevelName;
     private Long countOfUser;
     private Long countOfLikes;
-    private List<FileVO> files = new ArrayList<>();
+    private List<ItemFileDTO> files = new ArrayList<>();
     private List<Long> fileIdsForDelete = new ArrayList<>();
 }

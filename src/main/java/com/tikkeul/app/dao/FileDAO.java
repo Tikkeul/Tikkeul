@@ -24,16 +24,16 @@ public class FileDAO {
         fileMapper.insert(savingLevelFileDTO);
     }
 
-//    public List<SavingLevelFileDTO> savingLevelFindAll(Long savinglevelId){
-//        log.info(savinglevelId.toString());
-//        return fileMapper.savingLevelSelectlAll(savinglevelId);
-//    }
+    public List<SavingLevelFileDTO> savingLevelFindAll(Long savinglevelId){
+        log.info(savinglevelId.toString());
+        return fileMapper.savingLevelSelectlAll(savinglevelId);
+    }
 
-//    public void savingLevelDelete(Long id){
-//        fileMapper.savingLevelDelete(id);
-//    }
+    public void savingLevelDelete(Long id){
+        fileMapper.savingLevelDelete(id);
+    }
 
-//    public void saveItem(ItemFileDTO itemFileDTO){
-//        fileMapper.insertItem(itemFileDTO);
-//    }
+    public void saveItem(ItemFileDTO itemFileDTO){
+        fileMapper.insertItem(itemFileDTO);
+    }
 }
