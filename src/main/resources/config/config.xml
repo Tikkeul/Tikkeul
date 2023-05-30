@@ -24,6 +24,15 @@
         <typeAlias type="com.tikkeul.app.domain.dto.SavingLevelFileDTO" alias="savingLevelFileDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.SavingVO" alias="savingVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.UserVO" alias="userVO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.MypageDTO" alias="mypageDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.MyhugiDTO" alias="myhugiDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.HugisujungDTO" alias="hugisujungDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.DoranbangDTO" alias="doranbangDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.HugisangseDTO" alias="hugisangseDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.GumaehugiDTO" alias="gumaehugiDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.MyjumooncancelDTO" alias="myjumooncancelDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.MyjjimDTO" alias="myjjimDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.MyjumoonDTO" alias="myjumoonDTO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.InquiryBoardDTO" alias="inquiryBoardDTO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.ItemDTO" alias="itemDTO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.OrderDTO" alias="orderDTO"/>

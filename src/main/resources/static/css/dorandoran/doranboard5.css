@@ -13,18 +13,9 @@
     width: 100%;
 }
 
-.wboard-wrap {
-    margin: 0 auto;
-    width: 100%;
-    width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
-}
-
 /**** WADIZ Community ****/
 /**메인페이지**/
-#wcommunityWrap {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right)
-}
+
 
 .wcommunity-wrap {
     color: #4a4a4a;
@@ -47,7 +38,7 @@
 .wcommunity-wrap h4 {
     margin-bottom: 20px;
     font-size: 16px;
-    font-weight:
+
 }
 
 .wcommunity-wrap h4 em {
@@ -548,7 +539,7 @@
 }
 
 .wcommunity-search-area.sub-page {
-    display: none
+    display: none;
 }
 
 .wcommunity-page-list {

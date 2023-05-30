@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -11,33 +11,36 @@
 </head>
 <body class="vsc-initialized" style="overflow: auto">
 
-<div class="ReactModalPortal" style="display: none;">
-    <div class="ReactModal__Overlay ReactModal__Overlay--after-open ConfirmModal_overlay__9xcDs waffle__modal__overlay" style="background-color: rgba(0, 0, 0, 0.2)">
-        <div class="ReactModal__Content ReactModal__Content--after-open ConfirmModal_confirmModal__1x2Tw ConfirmModal_sizeLg__KHkYl" tabindex="-1" role="dialog" aria-modal="true">
-            <div class="ConfirmModal_header__gkXhb">
-                <div title="주문 취소하시겠어요?" class="ConfirmModal_title__ubaBW">
-                    주문 취소하시겠어요?
+
+<!-- 취소 모달-->
+<form th:action="@{/mypage/cancel}" method="post">
+    <div class="ReactModalPortal" style="display: none;">
+        <div class="ReactModal__Overlay ReactModal__Overlay--after-open ConfirmModal_overlay__9xcDs waffle__modal__overlay" style="background-color: rgba(0, 0, 0, 0.2)">
+            <div class="ReactModal__Content ReactModal__Content--after-open ConfirmModal_confirmModal__1x2Tw ConfirmModal_sizeLg__KHkYl" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header__gkXhb">
+                    <div title="주문 취소하시겠어요?" class="ConfirmModal_title__ubaBW">
+                        주문 취소하시겠어요?
+                    </div>
                 </div>
-            </div>
-            <div class="ConfirmModal_content__3KM88 ConfirmModal_hasTitle__3rvSc">
-                <div class="ConfirmModal_message__Mi2Ur">주문하신 상품을 받아 볼 수 없게 됩니다.</div>
-            </div>
-            <div class="ConfirmModal_footer__gfGBl">
-                <div class="ConfirmModal_buttonGroup__3YCl5">
-                    <button class="mclose Button_button__2FuOU Button_text__2-UCU Button_md__46Ai- ConfirmModal_negativeButton__3VxAF" type="button">
-                        <span><span class="Button_children__ilFun">닫기</span></span></button>
-                    <button class="Button_button__2FuOU Button_primary__2mZni Button_text__2-UCU Button_md__46Ai- ConfirmModal_positiveButton__Fafi9" type="button">
-                        <span><span class="Button_children__ilFun">주문 취소</span></span>
-                    </button>
+                <div class="ConfirmModal_content__3KM88 ConfirmModal_hasTitle__3rvSc">
+                    <div class="ConfirmModal_message__Mi2Ur">주문하신 상품을 받아 볼 수 없게 됩니다.</div>
+                </div>
+                <div class="ConfirmModal_footer__gfGBl">
+                    <div class="ConfirmModal_buttonGroup__3YCl5">
+                        <button class="mclose Button_button__2FuOU Button_text__2-UCU Button_md__46Ai- ConfirmModal_negativeButton__3VxAF" type="button">
+                            <span><span class="Button_children__ilFun">닫기</span></span></button>
+                        <button class="Button_button__2FuOU Button_primary__2mZni Button_text__2-UCU Button_md__46Ai- ConfirmModal_positiveButton__Fafi9" type="submit">
+                            <span><span class="Button_children__ilFun">주문 취소</span></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 
 
-
-<div id="page-container">
+<div id="page-container" th:object="${k}">
     <main id="main-app">
         <div class="web-header">
             <div class="web-header-large">
@@ -51,14 +54,13 @@
                         <div class="OrderDetailPage_cardInfoArea__m9xa0">
                             <div class="PurchaseDetailHeaderCard_item__2Ki-i PurchaseDetailHeaderCard_normal__3VSo7">
                                 <div class="PurchaseDetailHeaderCard_etcArea__2kh9o">
-                                    <span>주문번호 230511-051850-0001</span><span>2023-05-11 05:19 구매</span>
+                                    <span th:field="*{id}">주문번호</span><span th:text="*{deliveryStartDate}">구매</span>
                                 </div>
                                 <div class="PurchaseDetailHeaderCard_content__1Vhic">
                                     <div class="PurchaseDetailHeaderCard_titleArea__2fhIz">
-                                        <a title="세계3대 유산균사의 특허균주 유산균 한달 9,900원 실화?"
-                                           class="PurchaseDetailHeaderCard_title__2CKaX" href="/web/store/detail/1198">세계3대
-                                            유산균사의 특허균주 유산균 한달 9,900원 실화?</a>
-                                        <div class="PurchaseDetailHeaderCard_makerName__3MvHq">파파비오랩</div>
+                                        <a
+                                                class="PurchaseDetailHeaderCard_title__2CKaX" href="/web/store/detail/1198" th:text="*{itemname}"></a>
+                                        <div class="PurchaseDetailHeaderCard_makerName__3MvHq" th:text="*{brand}">브랜드</div>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +69,7 @@
                         <div class="StateMessageBox_container__1BnqE">
                             <div>
                                 <span class="Badge_container__9G9PS Badge_visible__3LNXv"><span
-                                        class="Badge_badge__ovUKI Badge_label__2Rft2 Badge_md__1Ck0w Badge_primary__tTdjx Badge_tertiary__3uYKh">상품 준비 중</span></span>
+                                        class="Badge_badge__ovUKI Badge_label__2Rft2 Badge_md__1Ck0w Badge_primary__tTdjx Badge_tertiary__3uYKh" th:text="*{status}"></span></span>
                             </div>
                             <div class="StateMessageBox_messageBox__29LF7">
                                 <span>메이커가 상품을 준비하고 있어요.</span><span></span>
@@ -87,7 +89,6 @@
                             <div>
                                 <div class="OrderDetailPage_paymentInfoHeader__qUXsa">
                                     <h3>결제 정보</h3>
-                                    <p class="OrderDetailPage_printReceipt__2xe-S">영수증 출력</p>
                                 </div>
 
                                 <div class="LabelValueListContainer_container__3xnyC">
@@ -95,7 +96,7 @@
                                         <dl class="">
                                             <dt class="undefined"><span>상품 금액</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="9,900 원">9,900 원</span>
+                                                <span th:text="*{price}"></span>
                                             </dd>
                                         </dl>
                                         <dl class="">
@@ -111,13 +112,13 @@
                                         <dl class="LabelValueList_strong__2qLag">
                                             <dt class="undefined"><span>최종 결제 금액</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="12,900 원">12,900 원</span>
+                                                <span th:text="*{finalPayCount}"></span>
                                             </dd>
                                         </dl>
                                         <dl class="">
                                             <dt class="undefined"><span>결제 수단</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="신용(체크) 카드">신용(체크) 카드</span>
+                                                <span th:text="*{payStatus}">신용(체크) 카드</span>
                                             </dd>
                                         </dl>
                                         <dl class="">
@@ -129,60 +130,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <h3>
-                                    결제 취소 정보
-                                    <div>
-                                        <button type="button"
-                                                class="Tooltip_button__2xpDd OrderDetailPage_button__pjgwW"
-                                                aria-describedby="Tooltip_12">
-                                            <span class="Tooltip_label__eKqLa"></span><span
-                                                class="Tooltip_helpIconWrap__3bvP3"><svg viewBox="0 0 40 40"
-                                                                                         focusable="false"
-                                                                                         role="presentation"
-                                                                                         class="withIcon_icon__3VTbq Tooltip_helpOutlineIcon__JkkNy"
-                                                                                         aria-hidden="true">
-                              <path fill="none" d="M0 0h40v40H0z"></path>
-                              <path d="M20 39a19 19 0 1 1 19-19 19.06 19.06 0 0 1-19 19zm0-36a17 17 0 1 0 17 17A17 17 0 0 0 20 3z"></path>
-                              <path d="M24.34 10A5.75 5.75 0 0 0 20 8.33a5.7 5.7 0 0 0-6 6h2a3.7 3.7 0 0 1 4-4 3.7 3.7 0 0 1 4 4A4.29 4.29 0 0 1 22 18l-.7.6a6.51 6.51 0 0 0-2.3 5.7h2c0-1.9 0-2.6 1.7-4.3l.6-.5a6.28 6.28 0 0 0 2.7-5.2 5.73 5.73 0 0 0-1.66-4.3zM20 26.87a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 1 0 0-3.6z"></path></svg><svg
-                                                viewBox="0 0 40 40" focusable="false" role="presentation"
-                                                class="withIcon_icon__3VTbq Tooltip_helpIcon__3jf9Q" aria-hidden="true">
-                              <path fill="none" d="M0 0h40v40H0z"></path>
-                              <path d="M20 1a19 19 0 1 0 19 19A19.06 19.06 0 0 0 20 1zm0 29.5a1.8 1.8 0 1 1 1.8-1.79 1.8 1.8 0 0 1-1.8 1.75zm6-16.13a6.28 6.28 0 0 1-2.7 5.2l-.6.5c-1.7 1.7-1.7 2.4-1.7 4.3h-2a6.51 6.51 0 0 1 2.3-5.7L22 18a4.29 4.29 0 0 0 2-3.7 3.7 3.7 0 0 0-4-4 3.7 3.7 0 0 0-4 4h-2a5.7 5.7 0 0 1 6-6 5.7 5.7 0 0 1 6 6z"></path></svg></span>
-                                        </button>
-                                    </div>
-                                </h3>
-                                <div class="LabelValueListContainer_container__3xnyC">
-                                    <div class="LabelValueList_container__91xOp">
-                                        <dl class="">
-                                            <dt class="undefined"><span>결제 취소 일시</span></dt>
-                                            <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="2023-05-11 06:15:04">2023-05-11 06:15:04</span>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                    <div class="LabelValueList_container__91xOp">
-                                        <dl class="LabelValueList_warning__35ihi LabelValueList_strong__2qLag">
-                                            <dt class="undefined"><span>최종 결제 취소 금액</span></dt>
-                                            <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="12,900 원">12,900 원</span>
-                                            </dd>
-                                        </dl>
-                                        <dl class="">
-                                            <dt class="undefined"><span>결제 수단</span></dt>
-                                            <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="신용(체크) 카드">신용(체크) 카드</span>
-                                            </dd>
-                                        </dl>
-                                        <dl class="">
-                                            <dt class="undefined"><span>결제 카드</span></dt>
-                                            <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span title="KB국민 / 527289**********">KB국민 / 527289**********</span>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div>
                                 <h3>배송 정보</h3>
                                 <div class="LabelValueListContainer_container__3xnyC">
@@ -190,19 +138,19 @@
                                         <dl class="">
                                             <dt class="undefined"><span>받는 분</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6 LabelValueList_preventEllipsis__2O0Jb">
-                                                <span title="김동찬">김동찬</span>
+                                                <span th:text="*{name}">김동찬</span>
                                             </dd>
                                         </dl>
                                         <dl class="">
                                             <dt class="undefined"><span>연락처</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6 LabelValueList_preventEllipsis__2O0Jb">
-                                                <span title="010-4537-8034">010-4537-8034</span>
+                                                <span th:text="*{phonenumber}"></span>
                                             </dd>
                                         </dl>
                                         <dl class="">
                                             <dt class="undefined"><span>주소</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6 LabelValueList_preventEllipsis__2O0Jb">
-                                                <span title="[02831]서울 성북구 성북로4길 52 112동 102호">[02831]서울 성북구 성북로4길 52 112동 102호</span>
+                                                <span th:text="*{address}"></span>
                                             </dd>
                                         </dl>
                                     </div>
@@ -214,9 +162,9 @@
                                     <div class="OrderCard_container__sICKL">
                                         <div class="OrderCard_content__3TN63">
                           <span class="OrderCard_title__SVEo-"
-                          >포스트바이오틱스 1박스 1개월분(30캡슐)</span
-                          ><span class="OrderCard_option__2tR0h">1개</span
-                                        ><span class="OrderCard_price__2XsK_">9,900원</span>
+                                th:text="*{itemname}"></span
+                          ><span class="OrderCard_option__2tR0h" th:text="*{orderAmount}"></span
+                                        ><span class="OrderCard_price__2XsK_" th:text="*{price}"></span>
                                         </div>
                                         <div class="OrderCard_thumbnailPlaceholder__JWTqc">
                                             <div class="OrderCard_thumbnail__3LNsT" style="
@@ -233,15 +181,10 @@
                                         <dl class="">
                                             <dt class=""><span>메이커명</span></dt>
                                             <dd class="LabelValueList_alignLeft__vu8QS">
-                                                <span title="파파비오랩">파파비오랩</span>
+                                                <span th:text="*{brand}"></span>
                                             </dd>
                                         </dl>
-                                        <dl class="">
-                                            <dt class=""><span>연락처</span></dt>
-                                            <dd class="LabelValueList_alignLeft__vu8QS">
-                                                <span title="07048432917">07048432917</span>
-                                            </dd>
-                                        </dl>
+
                                     </div>
                                 </div>
                             </div>

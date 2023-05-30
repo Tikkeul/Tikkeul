@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>후기 내역</title>
@@ -32,25 +32,7 @@
                         <div class="MuiBox-root css-tor48c">
                             <div class="MuiBox-root css-18zxgs3">
                                 <div class="MuiBox-root css-k008qs">
-                                    <div class="MuiFormControl-root css-1ltv3yn">
-                                        <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1vmia02">
-                                            <div tabindex="0" role="button" aria-expanded="false"
-                                                 aria-haspopup="listbox" aria-label="Without label"
-                                                 class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-qiwgdb">
-                                                전체
-                                            </div>
-                                            <input aria-hidden="true" tabindex="-1"
-                                                   class="MuiSelect-nativeInput css-1k3x8v3" value="">
-                                            <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-1636szt"
-                                                 focusable="false" aria-hidden="true" viewBox="0 0 24 24">
-                                                <path d="M7 10l5 5 5-5z"></path>
-                                            </svg>
-                                            <fieldset aria-hidden="true"
-                                                      class="MuiOutlinedInput-notchedOutline css-igs3ac">
-                                                <legend class="css-ihdtdm"><span class="notranslate">​</span></legend>
-                                            </fieldset>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="MuiBox-root css-k008qs" data-gtm-vis-first-on-screen-97083289_157="33693">
                                     <div class="MuiFormControl-root css-tcw4yi">
@@ -92,9 +74,9 @@
                                 </div>
                             </div>
                             <div class="wcommunity-webzine-list">
-                                <ul>
+                                <ul class="bbbb">
 
-                                    <li>
+                                    <!--<li>
                                         <a href="javascript:detail(8308)">
                                             <div class="wcommunity-story  ">
                                                 <div class="story-info">
@@ -114,91 +96,12 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </li>
+                                    </li>-->
 
-                                    <li>
-                                        <a href="javascript:detail(8247)">
-                                            <div class="wcommunity-story  ">
-                                                <div class="story-info">
-                                                    <em class="category notice-badge">공지</em>
-                                                    <em class="category best-badge">베스트</em>
-                                                    <em class="category">구매 후기</em>
-                                                    <p class="title"> 향긋한 살구향에 부담없이 하루에 한병 간편하게 마시기만 하면 살이 빠진다는 다이어트 식품이란게 정말 믿어지지 않을 만큼 맛있어요
-                                                        아직 특별한 체중 변화는 없지만 매일 화장실을 가고 몸이 가벼워지는 느낌은 있어요
-                                                        꾸준히 마시면 정말 효과 있을것 같아요^^</p>
-                                                    <p class="info"><em class="editor"></em><em class="date">22.07.06</em></p>
-                                                </div>
-                                                <div class="img-wrap">
-                                                    <div class="story-img"
-                                                         style="background-image:url(https://cdn3.wadiz.kr/community/2023/05/16/6de553eb-2922-4ea3-9204-e027472fba66.jpeg/wadiz/resize/130/quality/85/)"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript:detail(8217)">
-                                            <div class="wcommunity-story  ">
-                                                <div class="story-info">
-                                                    <em class="category notice-badge">공지</em>
-                                                    <em class="category best-badge">베스트</em>
-                                                    <em class="category">구매 후기</em>
-                                                    <p class="title"> 여태 캡슐세제,액체세제도 여러가지 브랜드로 많이 써봤는데
-                                                        마리에코 캡슐세제는 향기도 부담스럽지 않고 강하지 않아서 거부감이 없고
-                                                        세탁 후 향기가 나지 않는 것도 있는데 이건 세탁하고 나서도 은은하게 향이 지속되고요!!
-                                                    </p>
-                                                    <p class="info"><em class="editor"></em><em class="date">22.06.08</em></p>
-                                                </div>
-                                                <div class="img-wrap">
-                                                    <div class="story-img"
-                                                         style="background-image:url(https://cdn3.wadiz.kr/community/2023/05/15/035fdb01-aa41-4692-823f-7be628249524.jpeg/wadiz/resize/130/quality/85/)"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript:detail(7313)">
-                                            <div class="wcommunity-story  ">
-                                                <div class="story-info">
-                                                    <em class="category notice-badge">공지</em>
-                                                    <em class="category best-badge">베스트</em>
-                                                    <em class="category">구매 후기</em>
-                                                    <p class="title">한번쯤 꼭 써보고싶었는데 체험단 당첨되어서 너무 기쁩니다ㅠㅠ진짜 일주일 꾸준하게 써보고 글 올려요 확실하게 다음날 푹자고 일어나면 아침에도 촉촉하고 물 많이 먹고 자고 일어난 느낌이에여!칙칙함도 없고 너무 좋네요ㅠㅠ월급날 사러오겠습니다!</p>
-                                                    <p class="info"><em class="editor"></em><em class="date">22.06.08</em></p>
-                                                </div>
-                                                <div class="img-wrap">
-                                                    <div class="story-img"
-                                                         style="background-image:url(https://cdn3.wadiz.kr/community/2023/05/16/cdb3cff3-3c94-4d8f-a98f-5aa34ab0ca4c.jpeg/wadiz/resize/130/quality/85/)"></div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                             <div class="MuiBox-root css-46b038" data-gtm-vis-first-on-screen-97083289_157="1616694">
-                                <div>
-                                    <button class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-1f53st9"
-                                            tabindex="-1" type="button" disabled="">
-                                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 24L15 18L21 12" stroke="#868E96" stroke-width="1.2"
-                                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                    <span><button
-                                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-6lfyiw"
-                                            tabindex="0" type="button"><div class="MuiBox-root css-xni1zk">1</div><span
-                                            class="MuiTouchRipple-root css-w0pj6f"></span></button></span>
-                                    <button class="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-yu5nod"
-                                            tabindex="-1" type="button" disabled="">
-                                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 12L21 18L15 24" stroke="#868E96" stroke-width="1.2"
-                                                  stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -208,4 +111,33 @@
     </div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script th:inline="javascript">
+
+    let datass = [[${datass}]];
+    console.log(datass);
+    datass.forEach(data =>{
+        console.log(data);
+        $('.bbbb').append(`
+
+               <li>
+                                        <a href="javascript:detail(8308)">
+                                            <div class="wcommunity-story  ">
+                                                <div class="story-info">
+                                                    <em class="category">구매 후기</em>
+                                                    <p class="title">${data.content}</p>
+                                                    <p class="info"><em class="editor"></em><em class="date">${data.registerDate}</em></p>
+                                                </div>
+                                                <div class="img-wrap">
+                                                    <div class="story-img"
+                                                         style="background-image:url(https://cdn.wadiz.kr/ft/images/green001/2023/0412/20230412150353887_4.png/wadiz/resize/800/format/jpg/quality/80/)"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+    `)
+    });
+
+</script>
 </html>

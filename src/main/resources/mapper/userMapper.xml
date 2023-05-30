@@ -19,15 +19,208 @@
 
     <!--회원가입-->
     <insert id="insert">
-        INSERT INTO USERS (ID, IDENTIFICATION, PASSWORD, NAME, REGISTERED_TYPE, SAVINGLEVEL_ID)
-        VALUES (SEQ_USER.NEXTVAL, #{identification}, #{password}, #{name}, #{registeredType}, #{levelId})
+
+        INSERT INTO USERS
+        (ID, IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, ROLL, PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, PROFILEIMAGEPATH, SAVINGLEVEL_ID)
+        VALUES(SEQ_USER.NEXTVAL, #{identification},#{password},#{name},#{phoneNumber},#{address}, #{roll},#{profileImageName,jdbcType=VARCHAR}, #{profileImageSize,jdbcType=NUMERIC},#{profileImageUuid,jdbcType=VARCHAR},#{profileImagePath,jdbcType=VARCHAR},#{levelId});
+
+
+    </insert>
+
+    <!--마이페이지, 동찬-->
+
+    <select id="select" resultType="mypageDTO">
+    SELECT ID,NAME,SAVINGLEVEL_ID,(
+        SELECT COUNT(*)
+        FROM ORDERS
+        <![CDATA[ WHERE USER_ID  = #{id} ]]>
+    ) ORDER_COUNT,
+    (
+        SELECT COUNT(*)
+        FROM LIKES
+       <![CDATA[ WHERE USER_ID  = #{id} ]]>
+    ) LIKE_COUNT
+    FROM USERS
+   <![CDATA[ WHERE ID=#{id} ]]>
+    </select>
+
+    <!--휴면계정-->
+    <update id="update">
+
+    UPDATE USERS
+    SET  STATUS = #{status}
+    WHERE  ID=#{id}
+
+    </update>
+
+    <!--후기수정-->
+    <update id="updatehugisujung">
+    UPDATE REVIEW
+    SET  CONTENT = #{content}
+    WHERE ORDER_ID=#{id}
+    </update>
+
+    <!--비밀번호체크-->
+    <select id="selectcheckpassword" resultType="userVO">
+    SELECT ID,PASSWORD
+    FROM USERS
+    WHERE ID=#{id} AND PASSWORD=#{password}
+    </select>
+
+    <!--비밀번호 변경-->
+    <update id="updatepassword">
+        UPDATE USERS
+        SET PASSWORD=#{password}
+        WHERE ID=#{id}
+    </update>
+
+
+    <select id="selectallmyjumoon" resultType="myjumoonDTO">
+        SELECT I.NAME, I.BRAND, O.STATUS, O.DELIVERY_START_DATE, O.ID, O.USER_ID,O.ITEM_ID,
+        F.ORIGIN_NAME FILE_ORIGIN_NAME ,F.UUID FILE_UUID,F.FILE_PATH
+        FROM ITEM I , ORDERS O ,ITEMFILE ITF, FILES F
+        WHERE O.USER_ID = #{id} AND I.ID = O.ITEM_ID
+    </select>
+
+    <select id="selectmyjumoonstatus" resultType="myjumoonDTO">
+        SELECT I.NAME, I.BRAND, O.STATUS, O.DELIVERY_START_DATE, O.ID, O.USER_ID,O.ITEM_ID
+        FROM ITEM I, ORDERS O,ITEMFILE ITF, FILES F
+        WHERE O.USER_ID = #{id} AND O.STATUS = #{status} AND I.ID = O.ITEM_ID
+    </select>
+
+
+    <!--후기뿌려줌-->
+    <select id="selectmyhugi" resultType="myhugiDTO">
+        SELECT O.ID OK, I.ID IK, O.DELIVERY_START_DATE, O.ORDER_AMOUNT, I.PRICE, I.NAME
+        FROM ITEM I JOIN ORDERS O
+        ON O.ID = #{id} AND I.ID = O.ITEM_ID
+    </select>
+
+    <!--후기수정-->
+    <select id="selectmyhugisujung" resultType="hugisujungDTO">
+        SELECT R.CONTENT ,O.ID
+        FROM ITEM I ,ORDERS O ,REVIEW R
+        WHERE  O.ID = #{id} AND I.ID = O.ITEM_ID AND R.ORDER_ID =O.ID
+    </select>
+
+    <select id="selectallmyjjim" resultType="myjjimDTO">
+        SELECT I.NAME, I.BRAND, I.CARTEGORY, I.PRICE,L.USER_ID, L.ID LIKES_ID, L.ITEM_ID, L.USER_ID,
+        (
+        SELECT COUNT(R.ID)
+        FROM ITEM I, ORDERS O, REVIEW R
+        WHERE R.ORDER_ID = O.ID AND O.ITEM_ID = I.ID
+        ) JJIMREVIEW_COUNT
+        FROM ITEM I JOIN LIKES L
+        ON L.USER_ID = #{id} AND I.ID = L.ITEM_ID
+    </select>
+
+    <select id="selectallmyjjimajax" resultType="_int">
+        SELECT I.NAME, I.BRAND, I.CARTEGORY, I.PRICE,L.USER_ID,
+        (
+        SELECT COUNT(R.ID)
+        FROM ITEM I, ORDERS O, REVIEW R
+        WHERE R.ORDER_ID = O.ID AND O.ITEM_ID = I.ID
+        ) JJIMREVIEW_COUNT
+        FROM ITEM I JOIN LIKES L
+        ON L.USER_ID = #{id} AND I.ID = L.ITEM_ID
+    </select>
+
+    <!--주문 상세페이지-->
+    <select id="selectjumoonsangse" resultType="myjumooncancelDTO">
+        SELECT U.NAME , U.ADDRESS , U.PHONENUMBER , I.PRICE , I.NAME ITEMNAME,I.BRAND,I.ID ,I.CURRENT_STOCK,O.FINAL_PAY_COUNT ,O.PAY_STATUS, O.ORDER_AMOUNT,O.STATUS,O.DELIVERY_START_DATE
+        FROM ORDERS O, USERS U, ITEM I
+        WHERE O.ID = #{id} AND O.ITEM_ID = I.ID AND O.USER_ID = U.ID
+    </select>
+
+
+    <!--주문 취소완료-->
+    <select id="selectcancelfinish" resultType="myjumooncancelDTO">
+        SELECT U.NAME , U.ADDRESS , U.PHONENUMBER , I.PRICE , I.NAME ITEMNAME ,I.BRAND,I.ID ,I.CURRENT_STOCK,O.FINAL_PAY_COUNT, O.ORDER_CANCEL_DATE ,O.PAY_STATUS, O.ORDER_AMOUNT,O.STATUS,O.DELIVERY_START_DATE
+        FROM ORDERS O, USERS U, ITEM I
+        WHERE O.ID = #{id} AND O.ITEM_ID = I.ID AND O.USER_ID = U.ID
+    </select>
+
+    <!--도란방 목록 조회-->
+    <select id="selectdoranbang" resultType="doranbangDTO">
+        SELECT D.TITLE, D.REGISTERDATE, U.NAME
+        FROM DORANBOARD D JOIN USERS U
+        ON USER_ID = #{id}
+    </select>
+
+    <!--구매후기 목록 조회-->
+    <select id="gumaehugimukruk" resultType="gumaehugiDTO">
+        SELECT R.CONTENT, R.REGISTER_DATE
+        FROM REVIEW R JOIN ORDERS O
+        ON O.USER_ID = #{id} AND R.ORDER_ID = O.ID
+    </select>
+
+    <!--후기 상세페이지-->
+    <select id="selecthugisangse" resultType="gumaehugiDTO">
+    SELECT R.SCORE, R.CONTENT , R.REGISTER_DATE ,I.NAME ITEMNAME ,I.BRAND ,U.NAME USERNAME
+    FROM ORDERS O , USERS U , REVIEW R ,ITEM I
+    WHERE U.ID = #{id} AND R.ORDER_ID = O.ID AND I.ID = O.ITEM_ID
+    </select>
+
+    <!--켈린더-->
+    <select id="selectmytikkle" resultType="savingVO">
+        SELECT ID, "START", TITLE, "END"
+        FROM SAVING
+        WHERE USER_ID=#{userId}
+    </select>
+
+    <!-- 켈린더 아이디값으로 정보 찾기 -->
+    <select id="selectmytikkleid" resultType="long">
+        SELECT ID
+        FROM SAVING
+        WHERE USER_ID=#{userId} AND "START"=#{date}
+    </select>
+
+
+    <update id="jumooncancel">
+    UPDATE ORDERS
+    SET STATUS = #{status}
+    WHERE ID=#{id}
+    </update>
+
+    <!--다시찜-->
+    <insert id="insertrejjim">
+    INSERT INTO LIKES
+    (ID, ITEM_ID, USER_ID)
+    VALUES(SEQ_USER.NEXTVAL, #{itemId}, #{id})
+    </insert>
+
+    <!--찜취소-->
+    <delete id="deletejjim">
+        DELETE FROM LIKES
+        WHERE ITEM_ID=#{itemId} AND USER_ID=#{id}
+    </delete>
+
+    <insert id="inserthugi">
+    INSERT INTO REVIEW
+    (ID, CONTENT, SCORE, REGISTER_DATE, ORDER_ID)
+    VALUES(SEQ_USER.NEXTVAL, #{content}, 0, SYSDATE , #{id})
+    </insert>
+
+    <!--캘린더 인서트-->
+    <insert id="inserttikkle">
+        INSERT INTO SAVING
+    (ID, "START", TITLE, STATUS, USER_ID, "END")
+    VALUES(SEQ_USER.NEXTVAL, #{start}, #{title}, '진행중' , #{userId}, #{start} )
+
     </insert>
 
     <!--소셜 회원 업데이트-->
+
     <update id="updatekakao">
         UPDATE  USERS
         SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}
         WHERE IDENTIFICATION = #{identification}
+    </update>
+
+    <update id="updatemytikkle">
+        UPDATE  SAVING
+        SET TITLE=#{title}
+        WHERE ID = #{id}
     </update>
 
     <update id="updateNaver">

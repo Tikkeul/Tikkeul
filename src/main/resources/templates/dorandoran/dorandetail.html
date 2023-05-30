@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8">
+    <title>dorandetail</title>
+    <link rel="stylesheet" href="/css/dorandoran/doranboard5.css">
+    <link rel="stylesheet" href="/css/dorandoran/doranboard6.css">
+    <link rel="stylesheet" href="/css/dorandoran/doranboard7.css">
+    <link rel="stylesheet" href="/css/dorandoran/doranboard8.css">
+    <link rel="stylesheet" href="/css/dorandoran/doranboard9.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<div id="newContainer">
+    <div id="wcommunityWrap">
+        <div class="wcommunity-wrap">
+            <div class="wcommunity-top">
+                <h2><a href="/web/wcast/main"><em class="logo_wcommunity"></em></a></h2>
+                <div id="wcastTopPC" class="wcommunity-topmenu">
+                    <ul class="depth1">
+
+                        <li>
+                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000011'">투자</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">투자</p>
+                                            <p class="comment">와디즈 투자에 대해 알고싶다면?</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000011','19');">메이커 팁
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000011','23');">투자자 팁
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000011','36');">커버스토리
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000013'">펀딩</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">펀딩</p>
+                                            <p class="comment">와디즈 펀딩에 대해 알고 싶다면?</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000013','29');">메이커 팁
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000013','37');">성공스토리
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000013','30');">서포터 팁
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000013','35');">커버스토리
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000014'">와디즈 넥스트</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">와디즈 넥스트</p>
+                                            <p class="comment">와디즈 + 함께하는 사람들의 이야기를 담은 격월간 매거진</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000014','39');">콘텐츠
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000014','40');">다운받기
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000012'">와디즈 뉴스</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">와디즈 뉴스</p>
+                                            <p class="comment">생생한 와디즈 내부 이야기 </p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000012','41');">신뢰센터
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000012','26');">새소식
+                                                    </button>
+                                                </li>
+
+                                                <li>
+                                                    <button type="button"
+                                                            onclick="searchByHeadWord('BRD0000012','21');">와디즈인 이야기
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!— //wcommunity-other-story —>
+
+        </div>
+        <!— //wcommunity-detail-bottom —>
+    </div><!-- //wcommunity-top -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.new-header .gnb > li:eq(3)').addClass('menu-on');
+        });
+
+        /* 말머리 클릭시 */
+        function searchByHeadWord(boardId, headWordId) {
+            $('#searchSelect1').val('');
+            $('#searchText1').val('');
+            $('#searchSelect5').val(boardId);
+            $('#searchSelect4').val(headWordId);
+            $('#cPage').val(1);
+            $('#formSearch').attr('action', '/web/wcast/list/' + boardId + '/' + headWordId);
+            $('#formSearch').submit();
+        }
+
+        /* 내가 쓴 글 검색 */
+        function searchByUserNameInViewN(userId) {
+            $('#searchSelect1').val('ui');
+            $('#searchText1').val(userId);
+            $('#searchText6').val('N');
+            $('#formSearch').attr('action', '/web/wcast/search');
+            $('#formSearch').submit();
+        }
+    </script>
+    <div class="wcommunity-content-wrap">
+        <div class="wcommunity-section1">
+            <div class="wcommunity-detail-info">
+                <div class="story-info">
+                    <em class="category">도란도란</em>
+                    <p class="title" th:text="${doranboard.title}">제목</p>
+                    <p class="editor" th:text="${doranboard.name}">이름</p>
+                    <p class="date" th:text="${doranboard.registerDate}">시간</p>
+                    <li class="active">
+                        <a type="button" class="change" th:href="@{/doranboard/doranmodify(id=${doranboard.id})}">수정</a>
+                        <a type="button" th:href="@{/doranboard/remove(id=${doranboard.id})}">삭제</a>
+                    </li>
+                    <p id="topSympCount" class="symp"></p>
+                </div>
+            </div>
+
+            <!-- 도란도란 게시글 내용을 나타내는 부분 -->
+            <div class="wcommunity-detail-content">
+                <div class="inner-contents">
+                    <p><br></p>
+                    <p class="content" th:text="${doranboard.content}">내용</p>
+                    <!--                    <th:block th:text="${doranboard.content}"></th:block>-->
+                </div>
+                <div class="attach-list">
+                    <ul>
+                        <!-- 첨부 파일 목록 등을 표시 -->
+                    </ul>
+                </div>
+            </div>
+        </div><!-- //wcommunity-section1 -->
+    </div><!-- //wcommunity-content-wrap -->
+    <div class="wcommunity-detail-bottom">
+        <div class="wcommunity-comment-wrap">
+            <div class="wcommunity-share-area">
+                <div class="btn-share">
+                    <button class="kakao" onclick="window.wadiz.share.kakao()"></button>
+                    <button class="facebook" onclick="window.wadiz.share.facebook();"></button>
+                    <button class="twitter" onclick="window.wadiz.share.twitter();"></button>
+                </div>
+            </div>
+
+            <section id="reply-write-wrap">
+                <div class="profile">
+                    <h6 class="writer" th:text="*{name}"></h6>
+                </div>
+                <textarea cols="30" rows="1" placeholder="내 댓글"></textarea>
+                <button>작성완료</button>
+            </section>
+            <section id="replies-wrap">
+                <ul></ul>
+            </section>
+
+        </div><!-- //wcommunity-detail-bottom -->
+    </div>
+</div>
+
+<form id="formSearch" name="formSearch" action="/web/wcast/search" method="post">
+    <input id="searchText1" name="searchText1" type="hidden" value="">
+    <input id="searchText6" name="searchText6" type="hidden">
+    <input id="searchSelect1" name="searchSelect1" type="hidden" value="">
+    <input id="searchSelect2" name="searchSelect2" type="hidden" value="">
+    <input id="searchSelect4" name="searchSelect4" type="hidden" value="37">
+    <input id="searchSelect5" name="searchSelect5" type="hidden" value="BRD0000013">
+</form>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+<script src="/js/doranboard/comment.js"></script>
+
+</html>

@@ -394,7 +394,7 @@ h1.form-header {
 /***** Buttons *****/
 .button, .section-subscribe button, .article-subscribe button, .community-follow button, .requests-table-toolbar .organization-subscribe button, .subscriptions-subscribe button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .edit-profile-button a, .hc__btn {
     background-color: #6B95FC;
-    border: 1px solid rgba(0, 204, 204, 1);
+    border: 1px solid #6B95FC;
     border-radius: 2px;
     color: #fff;
     cursor: pointer;

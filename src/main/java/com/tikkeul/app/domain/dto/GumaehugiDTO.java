@@ -1,4 +1,5 @@
-package com.tikkeul.app.domain.vo;
+package com.tikkeul.app.domain.dto;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -6,11 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @NoArgsConstructor
-public class SavingVO {
+public class GumaehugiDTO {
+
     private Long id;
-    private int title;
-    private String status;
-    private String start;
-    private String end;
+    private Long orderId;
     private Long userId;
+    private String registerDate;
+    private String content;
+
 }

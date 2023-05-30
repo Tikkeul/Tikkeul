@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'net.nurigo:sdk:4.2.7'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
