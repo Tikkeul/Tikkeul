@@ -24,9 +24,7 @@ public class DoranBoardDAO {
     }
 
     //    게시글 추가
-    public void save(DoranBoardVO doranBoardVO) {
-        doranBoardMapper.insert(doranBoardVO);
-    }
+    public void save(DoranBoardDTO doranBoardDTO) { doranBoardMapper.insert(doranBoardDTO); }
 
     //    게시글 상세보기
     public Optional<DoranBoardDTO> findById(Long id) {

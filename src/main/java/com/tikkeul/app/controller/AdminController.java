@@ -99,7 +99,7 @@ public class AdminController {
             model.addAttribute("doranBoard", checkDoranBoardDTO.get());
         }
 //        checkDoranBoardDTO.ifPresent(doranBoardDTO -> model.addAttribute(doranBoardDTO));
-//        model.addAttribute("doranBoard",adminService.adminReadDoranBoard(id));
+    //        model.addAttribute("doranBoard",adminService.adminReadDoranBoard(id));
     }
 
     @PostMapping("doranBoard/delete")

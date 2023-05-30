@@ -140,6 +140,8 @@ body {
 }
 section.content-container {
     flex-grow: 1 !important;
+    margin-bottom: 30px;
+
 }
 .profile {
     display: flex;
@@ -223,7 +225,7 @@ section#reply-write-wrap textarea , section.reply-update-wrap textarea{
     resize: none;
     overflow: hidden;
     border: none;
-    border-bottom: 3px solid rgb(235 124 120);
+    border-bottom: 3px solid #6B95FC;
 }
 .button-wrap button:hover {
     background-color: #F3F5F7;
@@ -235,7 +237,7 @@ section.reply-update-wrap .button-wrap{
     font-weight: 200;
 }
 a.update, a.delete {
-    color: rgb(235 124 120);
+    color: #6B95FC;
 }
 section.reply-update-wrap {
     display: none;
@@ -262,9 +264,9 @@ section#reply-write-wrap textarea , section.reply-update-wrap textarea{
     resize: none;
     overflow: hidden;
     border: none;
-    border-bottom: 3px solid rgb(235 124 120);
+    border-bottom: 3px solid #6B95FC;
 }
 span.update, span.delete {
-    color: rgb(235 124 120);
+    color: #6B95FC;
     cursor: pointer;
 }

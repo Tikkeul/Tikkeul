@@ -1,6 +1,7 @@
 package com.tikkeul.app.controller;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.UserMapper;
 import com.tikkeul.app.service.email.RegisterMail;
@@ -81,7 +82,7 @@ public class JoinController {
 
 //    메인페이지로 이동
     @GetMapping("mainpage")
-    public void goToMain(Model model, HttpSession session){
+    public void goToMain(Model model){
         model.addAttribute("savinglevels",mainService.getsavinglevelList());
     }
 
@@ -90,14 +91,15 @@ public class JoinController {
 //  메인페이지에서 모든 상품 불러오기
     @GetMapping("getItemAll")
     @ResponseBody
-    public List<ItemDTO> getItemAll(Model model, HttpSession session){
+    public List<ItemFileSavingLevelDTO>  getItemAll(){
+        log.info(itemService.getitemList().toString());
        return itemService.getitemList();
     }
 
 //  메인 페이지에서 해당 상품 불러오기
     @GetMapping("getItem")
     @ResponseBody
-    public List<ItemDTO> getItem(@RequestParam("savingLevelId") Long savingLevelId, Model model, HttpSession session){
+    public List<ItemFileSavingLevelDTO> getItem(@RequestParam("savingLevelId") Long savingLevelId){
        return itemService.getOptionItemList(savingLevelId);
     }
 

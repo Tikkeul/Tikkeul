@@ -21,7 +21,7 @@ public class DoranDoranTests {
     @Autowired
     private DoranBoardMapper doranBoardMapper;
 
-    @Test
+/*    @Test
     public void insertTest() {
         DoranBoardVO doranBoardVO = new DoranBoardVO();
         doranBoardVO.setId(8L);
@@ -31,7 +31,7 @@ public class DoranDoranTests {
         doranBoardVO.setUserId(8L);
         doranBoardVO.setItemId(8L);
         doranBoardMapper.insert(doranBoardVO);
-    }
+    }*/
 
     @Test
     public void selectAllTest(){

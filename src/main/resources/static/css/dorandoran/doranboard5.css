@@ -2121,11 +2121,6 @@
 @media screen and (min-width: 960px) {
     /**** WADIZ Community ****/ /**메인페이지**/ #wcommunityWrap {
 }
-
-    .wcommunity-wrap {
-        cursor: pointer;
-    }
-
     .wcommunity-top .wcommunity-topmenu {
         overflow-x: visible;
         text-align: center;
@@ -3056,4 +3051,53 @@ section#reply-write-wrap button, section.reply-update-wrap button {
     color: rgb(24, 26, 28);
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.web-header {
+    transition: top .25s;
+    width: 100%;
+}
+.web-header .header-wrapper {
+    position: relative;
+    border-bottom: 1px solid #f2f4f6;
+    padding: 0;
+    height: 56px;
+    text-align: left;
+}
+
+.web-header .web-header-simple {
+    display: block;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+}
+.web-header .header-wrapper .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+}
+.web-header .web-header-simple .wadiz-logo {
+    display: inline-block;
+    position: static;
+}
+
+.web-header .wadiz-logo {
+    margin: 0;
+    line-height: 22px;
+    font-size: 32px;
+}
+.web-header .wadiz-logo>a {
+    display: block;
+    padding: 11px 0 13px;
+}
+
+a, button {
+    outline: none;
+}
+a {
+    text-decoration: none;
 }

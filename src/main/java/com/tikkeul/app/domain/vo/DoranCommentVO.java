@@ -13,5 +13,6 @@ public class DoranCommentVO {
     private String content;
     private String registerDate;
     private String updateDate;
-    private Long doranBoardId;
+    private Long doranboardId;
+    private Long userId;
 }

@@ -1,7 +1,6 @@
 package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.vo.ItemFileVO;
-import com.tikkeul.app.domain.vo.SavingLevelFileVO;
 import com.tikkeul.app.mapper.ItemFileMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

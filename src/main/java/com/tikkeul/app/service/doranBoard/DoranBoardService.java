@@ -13,7 +13,7 @@ public interface DoranBoardService {
     public List<DoranBoardDTO> getList(Pagination pagination, Search search);
 
     //    게시글 추가
-    public void write(DoranBoardVO doranBoardVO);
+    public void write(DoranBoardDTO doranBoardDTO);
 
     //    게시글 조회
     public Optional<DoranBoardDTO> read(Long id);

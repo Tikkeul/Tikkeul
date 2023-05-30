@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -24,6 +27,7 @@ public class DoranBoardController {
     /*도란보드 최보근*/
 
     private final DoranBoardService doranBoardService;
+    private final HttpSession session;
 
     /*목록 가져오기*/
     @GetMapping("doranboard")
@@ -36,13 +40,14 @@ public class DoranBoardController {
 
     /*게시글 추가*/
     @GetMapping("doranwrite")
-    public void goToWriteForm(DoranBoardVO doranBoardVO) {
+    public void goToWriteForm(DoranBoardDTO doranBoardDTO) {
         ;
     }
 
     @PostMapping("doranwrite")
-    public RedirectView write(DoranBoardVO doranBoardVO) {
-        doranBoardService.write(doranBoardVO);
+    public RedirectView write(DoranBoardDTO doranBoardDTO) {
+        doranBoardDTO.setUserId((Long)session.getAttribute("id"));
+        doranBoardService.write(doranBoardDTO);
         return new RedirectView("/doranboard/doranboard");
     }
 
@@ -61,14 +66,15 @@ public class DoranBoardController {
         return new RedirectView("/doranboard/doranboard");
     }
 
-
-
-
     /*게시글 삭제*/
     @GetMapping("remove")
     public RedirectView remove(Long id) {
         doranBoardService.remove(id);
         return new RedirectView("/doranboard/doranboard");
+    }
+
+    public String getPath(){
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
     }
 
 

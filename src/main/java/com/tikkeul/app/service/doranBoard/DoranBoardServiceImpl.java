@@ -27,8 +27,8 @@ public class DoranBoardServiceImpl implements DoranBoardService {
     }
     /*게시글 추가*/
     @Override
-    public void write(DoranBoardVO doranBoardVO) {
-        doranBoardDAO.save(doranBoardVO);
+    public void write(DoranBoardDTO doranBoardDTO) {
+        doranBoardDAO.save(doranBoardDTO);
     }
 
     /*게시글 조회*/

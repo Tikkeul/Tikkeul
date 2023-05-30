@@ -17,6 +17,21 @@ public class UserDAO {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//홍윤기 작업공간
+
 //  아이디 중복검사
     public Optional<UserVO> findById(String identification){
         return userMapper.selectById(identification);
@@ -37,15 +52,15 @@ public class UserDAO {
     public Optional<UserVO> findByUserIdAndUserPassword( String identification, String password){
         return userMapper.selectByUserIdAndUserPassword(identification,password);
     };
-
+//    네이버 회원 업데이트
     public void updateNaver(UserVO userVO) {
         userMapper.updateNaver(userVO);
     }
-
+//  비밀번호 업데이트
     public void updatepassword(String identification, String password) {
         userMapper.updatepassword(identification, password);
     }
-
+//    비밀번호 조회
     public String selectpassword(String identification, String password) {
        return userMapper.selectpassword(identification,password);
     }

@@ -1,6 +1,7 @@
 package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import com.tikkeul.app.domain.type.CategoryType;
 import com.tikkeul.app.domain.vo.ItemVO;
@@ -35,21 +36,13 @@ public class ItemDAO {
 
 
 //    홍윤기 작업공간
-    public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
+    public List<ItemFileSavingLevelDTO> findAllItem() { return itemMapper.selectAllItem();
     }
 
-
-    
-
-
-    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
+    public List<ItemFileSavingLevelDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
     }
-
     //    제품 등록 ( 관리자 )
     public void saveItem(ItemDTO itemDTO){
         itemMapper.insertItem(itemDTO);
     }
-
-
 }
-

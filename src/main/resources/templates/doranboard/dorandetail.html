@@ -14,164 +14,19 @@
 <div id="newContainer">
     <div id="wcommunityWrap">
         <div class="wcommunity-wrap">
-            <div class="wcommunity-top">
-                <h2><a href="/web/wcast/main"><em class="logo_wcommunity"></em></a></h2>
-                <div id="wcastTopPC" class="wcommunity-topmenu">
-                    <ul class="depth1">
-
-                        <li>
-                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000011'">투자</button>
-                            <ul class="depth2">
-                                <li>
-                                    <dl>
-                                        <dt>
-                                            <p class="depth1-title">투자</p>
-                                            <p class="comment">와디즈 투자에 대해 알고싶다면?</p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000011','19');">메이커 팁
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000011','23');">투자자 팁
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000011','36');">커버스토리
-                                                    </button>
-                                                </li>
-
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000013'">펀딩</button>
-                            <ul class="depth2">
-                                <li>
-                                    <dl>
-                                        <dt>
-                                            <p class="depth1-title">펀딩</p>
-                                            <p class="comment">와디즈 펀딩에 대해 알고 싶다면?</p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000013','29');">메이커 팁
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000013','37');">성공스토리
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000013','30');">서포터 팁
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000013','35');">커버스토리
-                                                    </button>
-                                                </li>
-
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000014'">와디즈 넥스트</button>
-                            <ul class="depth2">
-                                <li>
-                                    <dl>
-                                        <dt>
-                                            <p class="depth1-title">와디즈 넥스트</p>
-                                            <p class="comment">와디즈 + 함께하는 사람들의 이야기를 담은 격월간 매거진</p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000014','39');">콘텐츠
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000014','40');">다운받기
-                                                    </button>
-                                                </li>
-
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <button type="button" onclick="location.href='/web/wcast/list/BRD0000012'">와디즈 뉴스</button>
-                            <ul class="depth2">
-                                <li>
-                                    <dl>
-                                        <dt>
-                                            <p class="depth1-title">와디즈 뉴스</p>
-                                            <p class="comment">생생한 와디즈 내부 이야기 </p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000012','41');">신뢰센터
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000012','26');">새소식
-                                                    </button>
-                                                </li>
-
-                                                <li>
-                                                    <button type="button"
-                                                            onclick="searchByHeadWord('BRD0000012','21');">와디즈인 이야기
-                                                    </button>
-                                                </li>
-
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
+            <div class="web-header">
+                <div class="web-header">
+                    <header class="header-wrapper web-header-simple">
+                        <div class="header-container">
+                            <h1 class="wadiz-logo">
+                                <a href="/join/mainpage">
+                                    <img src="/image/Logo.png">
+                                </a>
+                            </h1>
+                        </div>
+                    </header>
                 </div>
             </div>
-            <!— //wcommunity-other-story —>
-
         </div>
         <!— //wcommunity-detail-bottom —>
     </div><!-- //wcommunity-top -->
@@ -208,7 +63,7 @@
                     <p class="title" th:text="${doranboard.title}">제목</p>
                     <p class="editor" th:text="${doranboard.name}">이름</p>
                     <p class="date" th:text="${doranboard.registerDate}">시간</p>
-                    <li class="active">
+                    <li class="active" th:if="${session.id == doranboard.userId}">
                         <a type="button" class="change" th:href="@{/doranboard/doranmodify(id=${doranboard.id})}">수정</a>
                         <a type="button" th:href="@{/doranboard/remove(id=${doranboard.id})}">삭제</a>
                     </li>
@@ -245,13 +100,12 @@
                 <div class="profile">
                     <h6 class="writer" th:text="*{name}"></h6>
                 </div>
-                <textarea cols="30" rows="1" placeholder="내 댓글"></textarea>
+                <textarea class="reply-bye" cols="30" rows="1" placeholder="내 댓글"></textarea>
                 <button>작성완료</button>
             </section>
             <section id="replies-wrap">
                 <ul></ul>
             </section>
-
         </div><!-- //wcommunity-detail-bottom -->
     </div>
 </div>
@@ -269,6 +123,12 @@
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
-<script src="/js/doranboard/comment.js"></script>
+<script th:inline="javascript">
+    let doranboardId = [[${doranboard.id}]];
+    let doranboard = [[${doranboard.userId}]];
+    let userId = [[${session.id}]];
 
+    console.log(doranboard)
+</script>
+<script src="/js/doranboard/comment.js"></script>
 </html>

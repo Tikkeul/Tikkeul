@@ -24,14 +24,13 @@
         </if>
     </sql>
 
-    <!--게시글 목록-->
+
     <select id="selectAll" resultType="DoranBoardDTO">
-        SELECT D.ID, D.TITLE, D.CONTENT, D.VIEWCOUNT, D.REGISTERDATE, D.UPDATEDATE, D.USER_ID, NAME
+        SELECT D.ID, D.TITLE, D.CONTENT, D.VIEWCOUNT, D.REGISTERDATE, D.UPDATEDATE, D.USER_ID, D.NAME
         FROM (
         SELECT ROWNUM R, D.ID, D.TITLE, D.CONTENT, D.VIEWCOUNT, D.REGISTERDATE, D.UPDATEDATE, D.USER_ID, D.ITEM_ID, U.NAME
         FROM DORANBOARD D
         JOIN USERS U ON U.ID = D.USER_ID
-        JOIN ITEM I ON D.ITEM_ID = I.ID
         <![CDATA[
         WHERE U.ID = D.USER_ID AND ROWNUM <= #{pagination.page} * #{pagination.rowCount}
         ]]>
@@ -42,20 +41,11 @@
         ]]>
     </select>
 
-
-
-<!--게시글/ 추가 숫자 아이디 강제 입력-->
+    <!--게시글 추가 -->
     <insert id="insert">
-        INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID, ITEM_ID )
-        VALUES(SEQ_POST.NEXTVAL, #{title}, #{content}, 2,2,2)
+        INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID )
+        VALUES(SEQ_DORANBOARD.NEXTVAL, #{title}, #{content}, 0,#{userId})
     </insert>
-
-<!--
-    <insert id="insert">
-        INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID, ITEM_ID )
-        VALUES(SEQ_POST.NEXTVAL, #{title}, #{content}, #{viewCount},#{userId},#{itemId})
-    </insert>
--->
 
     <!--게시글 조회-->
     <select id="select" resultType="DoranBoardDTO">

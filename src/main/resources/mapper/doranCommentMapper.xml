@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tikkeul.app.mapper.DoranCommentMapper">
-        <select id="selectAll" resultType="DoranCommentVO">
-        SELECT ID, CONTENT, REGISTERDATE
+        <select id="selectAll" resultType="doranCommentDTO">
+        SELECT ID, CONTENT, REGISTERDATE, NAME, USER_ID
         FROM
         (
-            SELECT ROWNUM R, RE.ID, CONTENT,REGISTERDATE
+            SELECT ROWNUM R, RE.ID, CONTENT,REGISTERDATE,NAME, USER_ID
             FROM
             (
-                SELECT RE.ID, CONTENT, REGISTERDATE
+                SELECT RE.ID, CONTENT, REGISTERDATE, U.NAME, U.ID USER_ID
                 FROM USERS U JOIN DORANCOMMENT RE
-                ON DORANBOARD_ID = #{id}
+                ON U.ID = RE.USER_ID AND DORANBOARD_ID = #{id}
                 ORDER BY RE.ID DESC
             ) RE
             WHERE
@@ -24,13 +24,13 @@
     </select>
 
     <insert id="insert">
-        INSERT INTO DORANCOMMENT (ID, CONTENT, DORANBOARD_ID)
-        VALUES(SEQ.NEXTVAL, #{content}, #{doranboardId})
+        INSERT INTO DORANCOMMENT (ID, CONTENT, USER_ID, DORANBOARD_ID)
+        VALUES(SEQ_DORANCOMMENT.NEXTVAL, #{content}, #{userId}, #{doranboardId})
     </insert>
 
     <update id="update">
         UPDATE DORANCOMMENT
-        SET CONTENT = #{content}, REPLY_UPDATE_DATE = SYSDATE
+        SET CONTENT = #{content}, UPDATEDATE = SYSDATE
         WHERE ID = #{id}
     </update>
 

@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tikkeul.app.mapper.DoranFileMapper">
+    <select id="selectAll" resultType="fileVO">
+        SELECT ID, DORANBOARD_ID
+        FROM DORANFILE
+        WHERE DORANBOARD_ID = #{doranBoardId}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO zz
+        (ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, POST_ID, FILE_TYPE)
+        VALUES(SEQ_DORANFILE.NEXTVAL, #{filePath}, #{fileUuid}, #{fileName}, #{fileSize}, #{postId}, #{fileType})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM DORANFILE WHERE ID = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM DORANFILE WHERE DORANBOARD_ID = #{doranBoardId}
+    </delete>
 
 </mapper>

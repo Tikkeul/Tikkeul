@@ -18,21 +18,20 @@ public class DoranCommentController {
 
     private final DoranCommentService doranCommentService;
 
-    @PostMapping("dorandetail")
+    @PostMapping("write")
     public void write(@RequestBody DoranCommentVO doranCommentVO){
         doranCommentService.write(doranCommentVO);
     }
 
     @GetMapping("doranboard/{doranboardId}/{page}")
     public List<DoranCommentDTO> getList(@PathVariable int page, @PathVariable Long doranboardId){
-        log.info("=======doranboardId    {}",doranboardId);
         final Pagination pagination = new Pagination();
         pagination.setPage(page);
         pagination.progress();
         return doranCommentService.getList(doranboardId, pagination);
     }
 
-    @PutMapping("doranmodify")
+    @PutMapping("modify")
 //    @PatchMapping("modify")
     public void modify(@RequestBody DoranCommentVO doranCommentVO){
         doranCommentService.modify(doranCommentVO);

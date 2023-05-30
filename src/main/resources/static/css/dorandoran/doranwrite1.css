@@ -547,7 +547,6 @@ h1.form-header {
 /***** Forms *****/
 
 .form {
-    max-width: 700px;
     background-color: #efefef;
     padding: 30px;
     border-radius: 3px;

@@ -7,11 +7,11 @@ function loadSavingLevels() {
   let i =0;
     $(".SchoolLectureListDesktop_mainSchoolLecture__3f2nw").html("");
   savinglevels.forEach(savinglevel=>{
-                        text += `<span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">
-                       <img src="/files/display?fileName=${savinglevel.filePath}/t_${savinglevel.fileUuid}_${savinglevel.fileOriginName}" class="preview" style="width: 170px">
-                       </span>
+                        text += `
                             <div class="SchoolLectureListDesktop_schoolLecture__2EK3P">
                         <span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">
+                            <img src="/files/display?fileName=${savinglevel.filePath}/t_${savinglevel.uuid}_${savinglevel.originName}" class="preview" style="width: 170px" alt="이게안나오">
+  
                             </span>
                         <a href="">
                             <div class="SchoolLectureListDesktop_lectureCon__BhKMl">
@@ -49,23 +49,18 @@ $(function(){
         });
     });
 });
-
+//
 function loaditems(items) {
     let text = "";
     let i = 0;
     $(".SchoolLectureListDesktop_mainSchoolLecture__3f2nw").html("");
-    items.forEach(item => {
-        text += `<span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">`
-        //     savinglevel.files.forEach(file => {
-        //     if(file.fileType == "REPRESENTATIVE") {
-        //         text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="preview" style="width: 170px">`;
-        //     }
-        // })
-        text += `  </span>
-                            <div class="SchoolLectureListDesktop_schoolLecture__2EK3P">
+    items.forEach(item =>
+        {
+        text += `<div class="SchoolLectureListDesktop_schoolLecture__2EK3P">
                         <span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">
+                            <img src="/files/display?fileName=${item.filePath}/t_${item.fileUuid}_${item.fileOriginName}" class="preview" style="width: 170px" alt="${item.fileOriginName}">
                             </span>
-                        <a href="/join/gotosavingdetails?id=${item.id}">
+                        <a href="/join/gotosavingdetails?id=${item.itemId}">
                             <div class="SchoolLectureListDesktop_lectureCon__BhKMl">
                                 <p class="SchoolLectureListDesktop_lectureType__8_hUF">
                                             <span>
@@ -73,7 +68,7 @@ function loaditems(items) {
                                                 ${item.savingLevelName}
                                             </span>
                                 <p class="SchoolLectureListDesktop_lectureTitle__2wTDN">
-                                ${item.name}
+                                ${item.itemName}
                                 </p>
                                 <p class="SchoolLectureListDesktop_lectureSub__3soFP">
                                    가격 : ${item.price} 원
@@ -112,6 +107,7 @@ $btns.eq(1).on('click',function(){
         url : "getItemAll",
         success : function(result){
             loaditems(result)
+            console.log(result);
         }
     });
 });
@@ -123,6 +119,7 @@ $btns.eq(2).on('click',function(){
         data: {savingLevelId: 1},
         success : function(result){
             loaditems(result)
+            console.log(result);
         }
     });
 
@@ -135,6 +132,7 @@ $btns.eq(3).on('click',function(){
         data: {savingLevelId: 2},
         success : function(result){
             loaditems(result)
+            console.log(result);
         }
     });
 });
@@ -146,6 +144,7 @@ $btns.eq(4).on('click',function(){
         data: {savingLevelId: 3},
         success : function(result){
             loaditems(result)
+            console.log(result);
         }
     });
 });

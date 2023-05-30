@@ -11,5 +11,7 @@ public class DoranCommentDTO {
     private String registerDate;
     private String updateDate;
     private String doranboardId;
+    private Long userId;
     private String name;
+
 }

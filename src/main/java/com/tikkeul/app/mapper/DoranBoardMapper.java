@@ -17,7 +17,7 @@ public interface DoranBoardMapper {
     public List<DoranBoardDTO> selectAll(@Param("pagination") Pagination pagination, @Param("search") Search search);
 
 //    게시글 추가
-    public void insert(DoranBoardVO doranBoardVO);
+    public void insert(DoranBoardDTO doranBoardDTO);
 
 //    게시글 상세보기
     public Optional<DoranBoardDTO> select(Long Id);

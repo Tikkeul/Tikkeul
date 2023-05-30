@@ -1,6 +1,6 @@
+/*
 package com.tikkeul.app.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnailator;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -18,8 +18,7 @@ import java.util.UUID;
 
 @Controller
 @RequestMapping("/files/*")
-@Slf4j
-public class FileController {
+public class DoranFileController {
     //    파일 업로드
     @PostMapping("upload")
     @ResponseBody
@@ -51,5 +50,5 @@ public class FileController {
     public byte[] display(String fileName) throws IOException{
         return FileCopyUtils.copyToByteArray(new File("C:/upload/", fileName));
     }
-
 }
+*/
