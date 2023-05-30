@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleag.org">
 <head>
-    <link rel="stylesheet" href="/css/selling/sellinglist.css">
-    <link rel="stylesheet" href="/css/selling/sellinglist3.css">
-    <link rel="stylesheet" href="/css/header/headerking.css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
+    <link rel="stylesheet" href="/css/selling/sellinglist.css">
+    <link rel="stylesheet" href="/css/selling/sellinglist3.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
     <title>와디즈 프리오더</title>
 </head>
 <body style="overflow: auto;">
 <div id="page-container">
     <main id="main-app">
-        <header th:replace="~{/header/header :: header}"></header>
+        <div class="web-header" th:replace="~{/header/header::.web-header}"></div>
         <div class="MainWrapper_content__GZkTa">
             <div class="KeyVisualBanner_container__37DZf">
                 <div class="slick-slider slick-initialized" dir="ltr">
-                    <button type="button" data-role="none" class="slick-arrow slick-prev" style="display: block;">
+                    <buztton type="button" data-role="none" class="slick-arrow slick-prev" style="display: block;">
                         Previous
-                    </button>
+                    </buztton>
                     <div class="slick-list">
                         <div class="slick-track"
                              style="width: 8400px; opacity: 1; transform: translate3d(-1680px, 0px, 0px);">
@@ -74,7 +74,7 @@
                     <div class="TabsMobile_tabsWrapper__3zP94">
                         <ul class="TabsMobile_tabs__39ewt TabsMobile_hideScrollbar__3v5I5">
                             <li data-index="0">
-                                <button class="ImageTab_tab__3siCY ImageTab_first__2C8Ry"
+                                <button class="ImageTab_tab__3siCY ImageTab_first__2C8Ry ImageTab_active__BGdXu"
                                         data-ga-category="프리오더(홈)_카테고리" data-ga-action="클릭" data-ga-label="전체">
                                     <div class="ImageTab_thumbnailContainer__3Polb">
                                         <div class="ImageTab_thumbnailPlaceholder__3mluI">
@@ -99,8 +99,7 @@
                                 </button>
                             </li>
                             <li data-index="2">
-                                <button class="ImageTab_tab__3siCY" data-ga-category="프리오더(홈)_카테고리" data-ga-action="클릭"
-                                        data-ga-label="패션·잡화">
+                                <button class="ImageTab_tab__3siCY" data-ga-category="프리오더(홈)_카테고리" data-ga-action="클릭" data-ga-label="패션·잡화">
                                     <div class="ImageTab_thumbnailContainer__3Polb">
                                         <div class="ImageTab_thumbnailPlaceholder__3mluI">
                                             <div class="ImageTab_thumbnail__3mZWA"
@@ -112,16 +111,14 @@
                                 </button>
                             </li>
                             <li data-index="3">
-                                <button class="ImageTab_tab__3siCY ImageTab_active__BGdXu"
-                                        data-ga-category="프리오더(홈)_카테고리" data-ga-action="클릭" data-ga-label="홈·리빙">
+                                <button class="ImageTab_tab__3siCY" data-ga-category="프리오더(홈)_카테고리" data-ga-action="클릭" data-ga-label="홈·리빙">
                                     <div class="ImageTab_thumbnailContainer__3Polb">
                                         <div class="ImageTab_thumbnailPlaceholder__3mluI">
                                             <div class="ImageTab_thumbnail__3mZWA"
                                                  style="background-image: url(&quot;https://cdn3.wadiz.kr/category/icon/category_living.png&quot;);"></div>
                                         </div>
                                     </div>
-                                    <div class="ImageTab_labelContainer__2apP3"><span
-                                            class="ImageTab_label__SvWW9">홈·리빙</span></div>
+                                    <div class="ImageTab_labelContainer__2apP3"><span class="ImageTab_label__SvWW9">홈·리빙</span></div>
                                 </button>
                             </li>
                             <li data-index="4">
@@ -133,8 +130,7 @@
                                                  style="background-image: url(&quot;https://cdn3.wadiz.kr/category/icon/category_beauty.png&quot;);"></div>
                                         </div>
                                     </div>
-                                    <div class="ImageTab_labelContainer__2apP3"><span
-                                            class="ImageTab_label__SvWW9">뷰티</span></div>
+                                    <div class="ImageTab_labelContainer__2apP3"><span class="ImageTab_label__SvWW9">뷰티</span></div>
                                 </button>
                             </li>
                             <li data-index="5">
@@ -146,8 +142,7 @@
                                                  style="background-image: url(&quot;https://cdn3.wadiz.kr/category/icon/category_food.png&quot;);"></div>
                                         </div>
                                     </div>
-                                    <div class="ImageTab_labelContainer__2apP3"><span
-                                            class="ImageTab_label__SvWW9">푸드</span></div>
+                                    <div class="ImageTab_labelContainer__2apP3"><span class="ImageTab_label__SvWW9">푸드</span></div>
                                 </button>
                             </li>
                             <li data-index="6">
@@ -159,8 +154,7 @@
                                                  style="background-image: url(&quot;https://cdn3.wadiz.kr/category/icon/category_publishing.png&quot;);"></div>
                                         </div>
                                     </div>
-                                    <div class="ImageTab_labelContainer__2apP3"><span
-                                            class="ImageTab_label__SvWW9">출판</span></div>
+                                    <div class="ImageTab_labelContainer__2apP3"><span class="ImageTab_label__SvWW9">출판</span></div>
                                 </button>
                             </li>
                             <li data-index="8">
@@ -221,7 +215,7 @@
             </div>
             <div class="Main_categoryMargin__1RWGF"></div>
             <div class="Main_container__2oIVn">
-                <div class="Main_category__3sabq"><p class="Main_categoryName__3YilF">홈·리빙</p>
+                <div class="Main_category__3sabq"><p class="Main_categoryName__3YilF"></p>
                     <div class="Main_filterWrap__2l__0">
                         <div class="OrderSelect_sortContainer__3F7LQ">
                             <div class="OrderSelect_content__1RjYa"><span>전체</span>
@@ -231,16 +225,14 @@
                                 </svg>
                             </div>
                             <select name="level" class="OrderSelect_selectBox__2hBjk">
-                                <option value="A">전체</option>
-                                <option value="S">씨앗</option>
-                                <option value="L">새싹</option>
-                                <option value="T">나무</option>
+                                <option value="전체">전체</option>
+                                <option value="씨앗">씨앗</option>
+                                <option value="새싹">새싹</option>
+                                <option value="나무">나무</option>
                             </select></div>
                         <ul class="OrderSelectDesktop_sortContainer__1YLsr">
-                            <li class="OrderSelectDesktop_sortItem__12TKi OrderSelectDesktop_active__YTP2K">최신순
-                            </li>
-                            <li class="OrderSelectDesktop_sortItem__12TKi">인기순
-                            </li>
+                            <li class="OrderSelectDesktop_sortItem__12TKi OrderSelectDesktop_active__YTP2K">최신순</li>
+                            <li class="OrderSelectDesktop_sortItem__12TKi">인기순</li>
                         </ul>
                     </div>
                 </div>
@@ -280,7 +272,12 @@
                         </svg>
                     </button>
                 </div>
+            </div>
+        </div>
     </main>
+</div>
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -289,7 +286,6 @@
 <script src="/js/sellinglist/categorybutton.js"></script>
 <script src="/js/header/header.js"></script>
 <script th:inline="javascript">
-    let items = [[${items}]];
 </script>
 <script>
     let count = 1;
@@ -298,14 +294,16 @@
 
 
     //카테고리
-    $(".ImageTab_tab__3siCY button").each((i,btn)=>{
+    $(".ImageTab_tab__3siCY").each((i,btn)=>{
         $(btn).on("click",e=>{
-            $(".ImageTab_tab__3siCY button").each((idx,all)=>{
+            console.log(btn);
+            $(".ImageTab_tab__3siCY").each((idx,all)=>{
                 $(all).removeClass("ImageTab_active__BGdXu");
             })
             $(btn).addClass("ImageTab_active__BGdXu");
             count=1;
-            $(".PreorderMainCard_item__2FrO0").html("");
+            $(".itemlist-wrap").html("");
+            $(".Main_categoryName__3YilF").html("")
             readList();
         })
     })
@@ -313,22 +311,22 @@
 
     //레벨
     $("select[name=level]").change(function(){
-        console.log($("select[name=level] option:selected").text());
+        $(".OrderSelect_content__1RjYa span").html($("select[name=level] option:selected").val());
         count=1;
-        $(".PreorderMainCard_item__2FrO0").html("");
+        $(".itemlist-wrap").html("");
         readList();
     })
 
 
     //정렬
-    $(".OrderSelectDesktop_sortItem__12TKi button").each((i,btn)=>{
+    $(".OrderSelectDesktop_sortItem__12TKi").each((i,btn)=>{
         $(btn).on("click",e=>{
-            $(".OrderSelectDesktop_sortItem__12TKi button").each((idx,all)=>{
+            $(".OrderSelectDesktop_sortItem__12TKi").each((idx,all)=>{
                 $(all).removeClass("OrderSelectDesktop_active__YTP2K");
             })
             $(btn).addClass("OrderSelectDesktop_active__YTP2K");
             count=1;
-            $(".PreorderMainCard_item__2FrO0").html("");
+            $(".itemlist-wrap").html("");
             readList();
         })
     })
@@ -343,18 +341,23 @@
     function readList() {
         let sort = $(".OrderSelectDesktop_active__YTP2K").html()
         let level = $("select[name=level] option:selected").text()
-        let category = $(".ImageTab_active__BGdXu").html()
+        let category = $(".ImageTab_active__BGdXu span").html()
+        console.log(sort);
+        console.log(level);
+        console.log(category);
         $.ajax({
-            url:"/item/list",
+            url:"/item/getList",
             data : {"sort":sort, "level":level, "category":category, "count":count},
             async :false,
             success : function (items) {
+                console.log(items);
+                console.log($("#itemlist-wrap"));
                 const $a = $("#itemlist-wrap");
 
                 let text = "";
                 items.forEach(item => {
                     text += `
-                         <a class="PreorderMainCard_item__2FrO0" th:href="@/item/readDetail">
+                         <a class="PreorderMainCard_item__2FrO0" href="/item/readDetail?id=${item.id}">
                                 <div class="PreorderMainCard_root__1-vcs" style="height: 100%; position: relative;">
                                     <div class="PreorderMainCard_thumbnailWrap__NRDb4">
                                         <div aria-hidden="true" class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
@@ -406,5 +409,8 @@
                 });
 
                 $a.html(text);
+            }
+        }
+    )}
 </script>
 </html>

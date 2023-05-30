@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -20,9 +23,7 @@ public class ItemController {
     //    김보령 작업공간
 //    열매샵 제품 목록 가져오기 : list.html
     @GetMapping("list")
-    public void list(CategoryType categoryType, Model model){
-        itemService.getList(categoryType).stream().map(ItemDTO::toString).forEach(log::info);
-        model.addAttribute("items", itemService.getList(categoryType));
+    public void list(){
     }
 
     //    열매샵 제품 상세 보기 : readDetail.html
@@ -32,5 +33,11 @@ public class ItemController {
         model.addAttribute("calcReview", itemService.readScoreAndCountOfReview(id).get());
     }
 
-
+    @ResponseBody
+    @GetMapping("getList")
+    public List<ItemDTO> getList(CategoryType categoryType){
+        log.info(categoryType.toString());
+        itemService.getList(categoryType).stream().forEach(itemDTO -> log.info(itemDTO.toString()));
+        return itemService.getList(categoryType);
+    }
 }

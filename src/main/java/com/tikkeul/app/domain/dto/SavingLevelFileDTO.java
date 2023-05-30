@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Data
 public class SavingLevelFileDTO {
     private Long id;
-
     private Long savinglevelId;
     private String savinglevelName;
     private int goalMoney;

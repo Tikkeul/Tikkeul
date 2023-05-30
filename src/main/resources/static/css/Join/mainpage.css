@@ -978,7 +978,6 @@ button[class*=Button_button] {
     font-weight: 500;
     margin: 4px 0;
     width: 100%;
-    display: inline-block;
     cursor: pointer;
     padding: 0;
     text-align: left;
